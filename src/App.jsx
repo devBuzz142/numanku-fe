@@ -1,9 +1,10 @@
 import PageTemplate from "./pages/PageTemplate/PageTemplate";
+import TodoListPage from "./pages/TodoListPage/TodoListPage";
 
 function App() {
   return (
     <PageTemplate>
-      <div>This is Numanke-FE App</div>
+      <TodoListPage />
     </PageTemplate>
   );
 }
