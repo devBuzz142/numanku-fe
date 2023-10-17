@@ -1,47 +1,53 @@
 import { useState } from "react";
 import * as S from "./TodoItem.style";
 
-const useInput = () => {
+const useInputs = () => {
   const [value, setValue] = useState();
-  const onChange = (event) => {
+
+  const onChange = ( event ) => {
     const{
-      target: {value}
+      target: { value }
     } = event;
-    setValue(value);
+    setValue ( value );
   };
-  return{ value };
+
+  return { value };
 };
 
-const checkbox = {
+const checkbox = [
   {
-    tab: "미완료"
+    tab: "미완료",
     content: "할 일을 아직 완료하지 못했습니다."
   },
   {
-    tab: "완료"
+    tab: "완료",
     content: "할 일을 완료했습니다."
   }
-};
+];
 
 const useTab = (initialTab, allTabs) => {
-  if (!allTabs || !Array.isArray(allTabs)) {
-    return;
-  }
+  
   const [currentIndex, setCurrentIndex] = useState(initialTab);
+
   return {
     currentItem: allTabs[currentIndex],
-    changeItem: setCurrentIndex
+    changeItem: setCurrentIndex,
   };
 };
 
 const TodoItem = () => {
-  const todo = useInput();
-  const tabs = useTab(0);
+  const todo = useInputs();
+
+  const { currentItem, changeItem } = useTab(0, checkbox);
+
+  console.log(currentItem);
+
   return (
   <S.TodoItemContainer>
     <textarea placeholder="할 일을 입력하세요..." {...todo} />
+
     <div className="done">
-      {checkbox.map((section) => (
+      {checkbox.map((section, index) => (
         <button onClick={() => changeItem(index)}>{section.tab}</button>
       ))}
     </div>
