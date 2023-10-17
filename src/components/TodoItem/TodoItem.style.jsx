@@ -6,5 +6,5 @@ export const TodoItemContainer = styled.div`
 
   padding: 4 16px;
 
-  background-color: skyblue;
+  background-color: hotpink;
 `;
