@@ -1,7 +1,7 @@
 import * as S from "./TodoListPage.style";
 
-import TodoList from "../../components/TodoList/TodoList";
-import TodoItem from "../../components/TodoItem/TodoItem";
+import TodoList from "../../../components/TodoList/TodoList";
+import TodoItem from "../../../components/TodoItem/TodoItem";
 
 const TodoListPage = () => {
   return (
