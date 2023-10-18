@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "./TodoContext";
 import * as S from "./TodoItem.style";
 
 const useInputs = () => {
-  const [value, setValue] = useState();
-
   const onChange = ( event ) => {
     const{
       target: { value }
@@ -35,7 +34,33 @@ const useTab = (initialTab, allTabs) => {
   };
 };
 
+
+
 const TodoItem = () => {
+  const [value, setValue] = useState('');
+  const { state, dispatch } = useContext(TodoContext);
+
+  const handleAddTodo = () => {
+    dispatch({
+      type: 'ADD', 
+      text: todo.value,
+      status: currentItem.tab
+    });
+
+
+  async function postTodo() {
+    const response = await fetch( {
+      method: "POST",
+      headers: {
+        "Content-Type": "assets/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    return response.json();
+  }
+      
+
   const todo = useInputs();
 
   const { currentItem, changeItem } = useTab(0, checkbox);

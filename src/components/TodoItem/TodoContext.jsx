@@ -13,14 +13,7 @@ const todoReducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
       return {
-        ...state,
-        todos: [
-          ...state.todos,
-          {
-            text: action.text,
-            status: action.status,
-          },
-        ],
+        todos: [...state.todos, action.payload],
       };
     //다른 액션도 여기에 추가
     default:
