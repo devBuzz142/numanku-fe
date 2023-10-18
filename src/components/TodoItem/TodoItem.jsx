@@ -77,6 +77,6 @@ const TodoItem = () => {
       ))}
     </div>
     </S.TodoItemContainer>);
-};
+  }};
 
 export default TodoItem;
