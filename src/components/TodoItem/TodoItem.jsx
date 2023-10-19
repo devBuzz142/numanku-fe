@@ -67,7 +67,6 @@ const TodoItem = () => {
   return (
     <S.TodoItemContainer>
       <textarea placeholder="할 일을 입력하세요..." {...todo} />
-
       <div className="done">
         {checkbox.map((section, index) => (
           <button onClick={() => changeItem(index)}>{section.tab}</button>

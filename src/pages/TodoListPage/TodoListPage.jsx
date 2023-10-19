@@ -10,6 +10,16 @@ const TodoListPage = () => {
   const { state, dispatch } = useContext(TodoContext);
   console.log(state);
 
+  useEffect(() => {
+    const getDummy = async () => {
+      const res = await fetch("/dummy.json");
+      const data = await res.json();
+      console.log(data);
+    };
+
+    getDummy();
+  }, []);
+
   return (
     <S.TodoListPageContainer>
       <TodoList>
