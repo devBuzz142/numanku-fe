@@ -1,4 +1,5 @@
-import * as S from "./PageTemplate.style";
+import { useState } from 'react';
+import * as S from './PageTemplate.style';
 
 const PageTemplate = ({ children }) => {
   return (
