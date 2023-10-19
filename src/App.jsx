@@ -1,10 +1,13 @@
-import PageTemplate from "./pages/PageTemplate/PageTemplate";
-import TodoListPage from "./pages/TodoListPage/TodoListPage";
+import MakeDesignPage from './pages/MakeDesignPage/MakeDesignPage';
+import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
+import PageTemplate from './pages/PageTemplate/PageTemplate';
 
 function App() {
   return (
     <PageTemplate>
-      <TodoListPage />
+      {/* <TodoListPage /> */}
+      <MakeInfoPage />
+      {/* <MakeDesignPage /> */}
     </PageTemplate>
   );
 }
