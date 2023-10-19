@@ -1,9 +1,9 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from "react";
 
 const TodoContext = createContext();
 
 const initialState = {
-  todos: [],
+  todos: ["hello this is initial state"],
 };
 
 //reducer는 현재 state와 동적 객체를 인수로 받아와서 새로운 state를 반환 하는 거라는데... 여기서 필요한지 잘 모르겠어요
@@ -11,7 +11,7 @@ const initialState = {
 
 const todoReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD':
+    case "ADD":
       return {
         todos: [...state.todos, action.payload],
       };
