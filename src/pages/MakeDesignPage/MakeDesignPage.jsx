@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
+import Tab, { useTab } from '../../components/Tab/Tab';
 
 const Container = styled.div`
   button {
@@ -21,6 +22,8 @@ const KukiCanvas = styled.div`
 const MakeDesignPage = () => {
   const navigate = useNavigate();
 
+  const [selected, setSelected] = useTab();
+
   const handleSubmitClick = () => {
     navigate('/make/qr');
   };
@@ -33,11 +36,11 @@ const MakeDesignPage = () => {
       <br />
       <KukiCanvas />
       <br />
-      <div>
-        <div>Outter Tab</div>
-        <div>Outter_Color Tab</div>
-        <div>Inner Tab</div>
-      </div>
+      <Tab
+        items={['Outter', 'Outter_Color', 'Inner']}
+        selected={selected}
+        setSelected={setSelected}
+      />
       <br />
       <button type="submit" onClick={handleSubmitClick}>
         Design Submit
