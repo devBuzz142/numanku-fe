@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import Tab, { useTab } from '../../components/Tab/Tab';
+import { useEffect, useRef, useState } from 'react';
 
 const Container = styled.div`
   button {
@@ -10,7 +11,7 @@ const Container = styled.div`
   }
 `;
 
-const KukiCanvas = styled.div`
+const KukiCanvas = styled.canvas`
   width: 296px;
   height: 296px;
 
@@ -24,6 +25,15 @@ const MakeDesignPage = () => {
 
   const [selected, setSelected] = useTab();
 
+  const canvasRef = useRef(null);
+  const [canvasCtx, setCanvasCtx] = useState(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    setCanvasCtx(ctx);
+  }, []);
+
   const handleSubmitClick = () => {
     navigate('/make/qr');
   };
@@ -34,7 +44,7 @@ const MakeDesignPage = () => {
     <Container>
       <h1>MakeDesignPage</h1>
       <br />
-      <KukiCanvas />
+      <KukiCanvas ref={canvasRef} />
       <br />
       <Tab
         items={['Outter', 'Outter_Color', 'Inner']}
