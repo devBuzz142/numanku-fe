@@ -20,6 +20,27 @@ const KukiCanvas = styled.canvas`
   background-color: white;
 `;
 
+const PALLETE = [
+  '#000000',
+  '#FF0000',
+  '#00FF00',
+  '#0000FF',
+  '#FFFF00',
+  '#FF00FF',
+];
+
+const PalleteContainer = styled.div`
+  display: flex;
+`;
+
+const PalleteItem = styled.div`
+  margin: 16px;
+
+  width: 32px;
+  height: 32px;
+  background-color: ${(props) => props.color};
+`;
+
 const MakeDesignPage = () => {
   const navigate = useNavigate();
 
@@ -29,11 +50,19 @@ const MakeDesignPage = () => {
   const [canvasCtx, setCanvasCtx] = useState(null);
   const [isPainting, setIsPainting] = useState(false);
 
+  const [colorIdx, setColorIdx] = useState(0);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     setCanvasCtx(ctx);
   }, []);
+
+  useEffect(() => {
+    if (canvasCtx) {
+      canvasCtx.strokeStyle = PALLETE[colorIdx];
+    }
+  }, [canvasCtx, colorIdx]);
 
   const handleDraw = (e) => {
     const { offsetX, offsetY } = e.nativeEvent;
@@ -64,6 +93,16 @@ const MakeDesignPage = () => {
         onMouseUp={() => setIsPainting(false)}
         onMouseLeave={() => setIsPainting(false)}
       />
+      <br />
+      <PalleteContainer>
+        {PALLETE.map((color, idx) => (
+          <PalleteItem
+            key={`pallete-${idx}`}
+            color={color}
+            onClick={() => setColorIdx(idx)}
+          />
+        ))}
+      </PalleteContainer>
       <br />
       <Tab
         items={['Outter', 'Outter_Color', 'Inner']}
