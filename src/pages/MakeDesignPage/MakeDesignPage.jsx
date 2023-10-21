@@ -27,12 +27,25 @@ const MakeDesignPage = () => {
 
   const canvasRef = useRef(null);
   const [canvasCtx, setCanvasCtx] = useState(null);
+  const [isPainting, setIsPainting] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     setCanvasCtx(ctx);
   }, []);
+
+  const handleDraw = (e) => {
+    const { offsetX, offsetY } = e.nativeEvent;
+
+    if (!isPainting) {
+      canvasCtx.beginPath();
+      canvasCtx.moveTo(offsetX, offsetY);
+    } else {
+      canvasCtx.lineTo(offsetX, offsetY);
+      canvasCtx.stroke();
+    }
+  };
 
   const handleSubmitClick = () => {
     navigate('/make/qr');
@@ -44,7 +57,13 @@ const MakeDesignPage = () => {
     <Container>
       <h1>MakeDesignPage</h1>
       <br />
-      <KukiCanvas ref={canvasRef} />
+      <KukiCanvas
+        ref={canvasRef}
+        onMouseDown={() => setIsPainting(true)}
+        onMouseMove={handleDraw}
+        onMouseUp={() => setIsPainting(false)}
+        onMouseLeave={() => setIsPainting(false)}
+      />
       <br />
       <Tab
         items={['Outter', 'Outter_Color', 'Inner']}
