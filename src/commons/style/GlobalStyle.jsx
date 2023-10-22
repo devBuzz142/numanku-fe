@@ -65,14 +65,14 @@ const GlobalStyle = () => {
           }
         }
 
-        select {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
+        // select {
+        //   -webkit-appearance: none;
+        //   -moz-appearance: none;
+        //   appearance: none;
 
-          border: none;
-          border-radius: 0px;
-        }
+        //   border: none;
+        //   border-radius: 0px;
+        // }
 
         input {
           -webkit-appearance: none;
