@@ -13,7 +13,7 @@ const Container = styled.div`
   }
 `;
 
-const MakeKukiPage = () => {
+const ViewDesignPage = () => {
   const navigate = useNavigate();
 
   const [kuki, setKuki] = useState({
@@ -43,15 +43,24 @@ const MakeKukiPage = () => {
         <label htmlFor="content">content</label>
         <input type="text" id="content" onChange={handleKukiChange} />
         <br />
+
         <label htmlFor="design">design</label>
-        //여러 초이스 중에서 선택하는 체크박스
+        <select onChange={(e) => handleKukiChange(e)}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
         <br />
+
         <label htmlFor="name">name</label>
         <input type="text" id="name" onChange={handleKukiChange} />
-        //공란이면 익명으로 or 랜덤으로
+        <input type="text" id="content" onChange={handleKukiChange} />
         <br />
-        <label htmlFor="open">open or not</label>
-        //체크박스
+        <label htmlFor="open">public or private</label>
+        <select onChange={(e) => handleKukiChange(e)}>
+          <option value="public">공개</option>
+          <option value="private">비공개</option>
+        </select>
       </form>
       <button type="button" onClick={handleSubmitClick}>
         submit
@@ -60,4 +69,4 @@ const MakeKukiPage = () => {
   );
 };
 
-export default MakeKukiPage;
+export default ViewDesignPage;

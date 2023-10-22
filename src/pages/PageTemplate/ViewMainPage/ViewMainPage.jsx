@@ -1,4 +1,4 @@
-const ViewPage = () => {
+const ViewMainPage = () => {
 
   return (
     <div>
@@ -7,4 +7,4 @@ const ViewPage = () => {
   );
 };
 
-export default ViewPage;
+export default ViewMainPage;
