@@ -8,6 +8,7 @@ const Container = styled.div`
   }
 
   button {
+    padding: 4px;
     border: 2px solid black;
     background-color: white;
   }

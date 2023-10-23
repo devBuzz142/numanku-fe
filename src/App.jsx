@@ -3,6 +3,7 @@ import MakeDesignPage from './pages/MakeDesignPage/MakeDesignPage';
 import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import PageTemplate from './pages/PageTemplate/PageTemplate';
 import HomePage from './pages/HomePage/HomePage';
+import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/make" element={<MakeInfoPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
+        <Route path="/make/qr" element={<MakeQRPage />} />
       </Routes>
     </PageTemplate>
   );
