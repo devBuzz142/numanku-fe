@@ -1,5 +1,10 @@
+import React from 'react';
 import styled from '@emotion/styled';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
+
+import kuki1 from '../../assets/kuki1.svg'
+import kuki2 from '../../assets/kuki2.svg'
+import kuki3 from '../../assets/kuki3.svg'
 
 const Container = styled.div`
   input {
@@ -10,30 +15,38 @@ const Container = styled.div`
     border: 2px solid black;
     background-color: white;
   }
+
+  background {
+    width: 300px;
+    height: 700px;
+    border: 4px solid black;
+    background-color: white;
+  }
 `;
 
 const ViewMainPage = () => {
   const navigate = useNavigate();
-
-  const handleViewClick = () => {
-    navigate('/view/${kukiID}')
-  }
   
   const handleDesignClick = () => {
     navigate('/view/design');
   }
 
+  const handleKukiClick = () => {
+    history.push('/kuki1');
+  }
+
+  const history = useHistory();
+
   return (
     <Container>
-      <h1>ViewPage</h1>
-      <form>
-        <button type="button" onClick={handleViewClick('1')}>kuki1</button>
-        <button type="button" onClick={handleViewClick('2')}>kuki2</button>
-        <button type="button" onClick={handleViewClick('3')}>kuki3</button>
-        <br />
-        <button type="button" onClick={handleViewClick('4')}>kuki4</button>
-        <button type="button" onClick={handleViewClick('5')}>kuki5</button>
-      </form>
+      <h1>ViewMainPage</h1>
+      <background type = "background">
+        <img src={kuki1} alt="kuki1" width="64px" height="64px" />
+        <button type="button" onClick={handleKukiClick}>viewKuki</button>
+        <img src={kuki2} alt="kuki1" width="64px" height="64px" />
+        <img src={kuki3} alt="kuki1" width="64px" height="64px" />
+      </background>
+      <br />
       <button type="button" onClick={handleDesignClick}>
         Design New Kuki
       </button>
