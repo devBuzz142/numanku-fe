@@ -1,6 +1,7 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styled from '@emotion/styled';
-import { useNavigate, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Modal from './ViewModalPage'
 
 import kuki1 from '../../assets/kuki1.svg'
 import kuki2 from '../../assets/kuki2.svg'
@@ -29,22 +30,23 @@ const ViewMainPage = () => {
   
   const handleDesignClick = () => {
     navigate('/view/design');
-  }
+  };
 
-  const handleKukiClick = () => {
-    history.push('/kuki1');
-  }
-
-  const history = useHistory();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <Container>
       <h1>ViewMainPage</h1>
       <background type = "background">
-        <img src={kuki1} alt="kuki1" width="64px" height="64px" />
-        <button type="button" onClick={handleKukiClick}>viewKuki</button>
-        <img src={kuki2} alt="kuki1" width="64px" height="64px" />
-        <img src={kuki3} alt="kuki1" width="64px" height="64px" />
+        <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
+          <img src={kuki1} alt="kuki1" width="64px" height="64px">
+            <Link to="/kuki1" onClick={() => openModal()}></Link>
+          </img>
+        </Modal>
+        <img src={kuki2} alt="kuki2" width="64px" height="64px" />
+        <img src={kuki3} alt="kuki3" width="64px" height="64px" />
       </background>
       <br />
       <button type="button" onClick={handleDesignClick}>
