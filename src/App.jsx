@@ -9,6 +9,17 @@ import HomePage from './pages/HomePage/HomePage';
 import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
 
 function App() {
+  const API_END_POINT =
+  'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
+
+  const a = async () => {
+    const res = await fetch(API_END_POINT + '/kuki/1');
+    const data = await res.json();
+    console.log(data);
+  };
+
+  a();
+  
   return (
     <PageTemplate>
       <Routes>

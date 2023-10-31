@@ -36,13 +36,22 @@ const ViewMainPage = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+//   var count = 2;
+// window.onscroll = function() {
+// 	if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+// 		var toAdd = document.createElement("div");
+// 		toAdd.classList.add("box");
+// 		toAdd.textContent = '${++count}번째 블록'
+// 		document.querySelector('section').appendChild(toAdd);
+// }
+  
   return (
     <Container>
       <h1>ViewMainPage</h1>
       <background type = "background">
         <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
           <img src={kuki1} alt="kuki1" width="64px" height="64px">
-            <Link to="/kuki1" onClick={() => openModal()}></Link>
+            {/* <Link to="/kuki1" onClick={() => openModal()}></Link> */}
           </img>
         </Modal>
         <img src={kuki2} alt="kuki2" width="64px" height="64px" />
