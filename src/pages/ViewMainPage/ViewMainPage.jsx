@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from "react-router-dom";
-import Modal from './ViewModalPage'
+import Modal from '../../components/Tab/Modal';
 
 import kuki1 from '../../assets/kuki1.svg'
 import kuki2 from '../../assets/kuki2.svg'
@@ -33,8 +33,14 @@ const ViewMainPage = () => {
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -72,11 +78,12 @@ const ViewMainPage = () => {
     <Container>
       <h1>ViewMainPage</h1>
       <background type = "background">
-        <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
-          <img src={kuki1} alt="kuki1" width="64px" height="64px">
-            {/* <Link to="/kuki1" onClick={() => openModal()}></Link> */}
-          </img>
-        </Modal>
+        <img src={kuki1} alt="kuki1" width="64px" height="64px"></img>
+          <button onClick={openModal}>모달 열기</button>
+          <Modal isOpen={isModalOpen} closeModal={closeModal}>
+            <h2>모달 내용</h2>
+            <p>쿠키 내용 불러오기 fetch 추가</p>
+          </Modal>
         <img src={kuki2} alt="kuki2" width="64px" height="64px" />
         <img src={kuki3} alt="kuki3" width="64px" height="64px" />
         {data.map((item) => (
