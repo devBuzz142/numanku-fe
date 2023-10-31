@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from "react-router-dom";
 import Modal from './ViewModalPage'
@@ -36,14 +36,37 @@ const ViewMainPage = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-//   var count = 2;
-// window.onscroll = function() {
-// 	if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-// 		var toAdd = document.createElement("div");
-// 		toAdd.classList.add("box");
-// 		toAdd.textContent = '${++count}번째 블록'
-// 		document.querySelector('section').appendChild(toAdd);
-// }
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const API_END_POINT =
+  'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(API_END_POINT + '/kuki/1');
+        setData((prevData) => [...prevData, ...response.data]);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+      setLoading(false);
+    };
+
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
+      ) {
+        fetchData();
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [page]);
   
   return (
     <Container>
@@ -56,6 +79,10 @@ const ViewMainPage = () => {
         </Modal>
         <img src={kuki2} alt="kuki2" width="64px" height="64px" />
         <img src={kuki3} alt="kuki3" width="64px" height="64px" />
+        {data.map((item) => (
+          {item}
+        ))}
+        {loading && <p>Loading...</p>}
       </background>
       <br />
       <button type="button" onClick={handleDesignClick}>
