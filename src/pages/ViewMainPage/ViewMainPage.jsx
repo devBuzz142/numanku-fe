@@ -66,7 +66,7 @@ const ViewMainPage = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [page]);
+  });
   
   return (
     <Container>
