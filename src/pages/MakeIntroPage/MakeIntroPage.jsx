@@ -13,12 +13,7 @@ const MakeIntroPage = () => {
       </S.LogoConatiner>
       <S.MainContainer>
         <S.ButtonWrapper>
-          <Button
-            type="button"
-            width={550}
-            height={100}
-            onClick={() => navigate('/make/info')}
-          >
+          <Button type="button" onClick={() => navigate('/make/info')}>
             시작하기
           </Button>
         </S.ButtonWrapper>

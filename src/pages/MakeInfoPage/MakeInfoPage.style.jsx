@@ -7,6 +7,10 @@ export const MakeInfoPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-position: center;
 `;
 
 export const HeaderContainer = styled.div`
@@ -40,4 +44,21 @@ export const MainContainer = styled.div`
   padding: 16px;
 
   background-color: rgba(255, 255, 255, 0.3);
+`;
+
+export const Form = styled.form`
+  height: 688px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-top: 124px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
 `;

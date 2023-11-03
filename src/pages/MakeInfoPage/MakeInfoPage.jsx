@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './MakeInfoPage.style';
 import Header from '../../components/Header/Header';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const MakeInfoPage = () => {
   const navigate = useNavigate();
@@ -31,12 +33,8 @@ const MakeInfoPage = () => {
     }
   };
 
-  const handleSubmitClick = () => {
-    navigate('/make/design');
-  };
-
   return (
-    <S.MakeInfoPageContainer>
+    <S.MakeInfoPageContainer image={image}>
       <S.HeaderContainer>
         <S.HeaderWrapper>
           <Header width={382}>공연 정보를 입력해주세요</Header>
@@ -45,21 +43,34 @@ const MakeInfoPage = () => {
         <div>? icon</div>
       </S.HeaderContainer>
       <S.MainContainer>
-        <form>
-          <label htmlFor="image">공연 포스터 업로드</label>
-          <input type="file" id="image" onChange={handleInfoChange} />
-          <br />
-          <label htmlFor="intro">공연소개란</label>
-          <input type="text" id="intro" onChange={handleInfoChange} />
-          <br />
-          <label htmlFor="link">공연 관련 링크</label>
-          <input type="text" id="link" onChange={handleInfoChange} />
-          <br />
-        </form>
-        {image && <img src={image} alt="preview" />}
-        <button type="button" onClick={handleSubmitClick}>
-          submit
-        </button>
+        <S.Form>
+          <Input
+            width={420}
+            label="공연포스터 업로드"
+            type="file"
+            id="image"
+            onChange={handleInfoChange}
+          />
+          <Input
+            width={550}
+            label="공연소개란"
+            type="text"
+            id="intro"
+            onChange={handleInfoChange}
+          />
+          <Input
+            width={550}
+            label="공연 관련 링크"
+            type="text"
+            id="link"
+            onChange={handleInfoChange}
+          />
+        </S.Form>
+        <S.ButtonWrapper>
+          <Button type="button" onClick={() => navigate('/make/design')}>
+            쿠키 꾸미기
+          </Button>
+        </S.ButtonWrapper>
       </S.MainContainer>
     </S.MakeInfoPageContainer>
   );
