@@ -28,3 +28,19 @@ export const Input = styled.input`
 
   font-size: 24px;
 `;
+
+export const ImageUploadButton = styled.button`
+  width: ${(props) => props.width + 'px' || '100%'};
+  height: ${(props) => props.width + 'px' || '100%'};
+
+  border-radius: 30px;
+  background-color: #4e413b;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ImageInput = styled.input`
+  display: none;
+`;

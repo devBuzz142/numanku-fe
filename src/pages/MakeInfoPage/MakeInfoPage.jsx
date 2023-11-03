@@ -18,6 +18,7 @@ const MakeInfoPage = () => {
 
   const handleInfoChange = (e) => {
     let { id, value } = e.target;
+
     if (id === 'image') value = e.target.files[0];
 
     setInfo({
@@ -48,9 +49,10 @@ const MakeInfoPage = () => {
       <S.MainContainer>
         <S.Form>
           <Input
-            width={420}
+            width={110}
+            height={100}
             label="공연포스터 업로드"
-            type="file"
+            type="image"
             id="image"
             onChange={handleInfoChange}
           />
