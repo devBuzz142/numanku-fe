@@ -1,18 +1,6 @@
-import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const Container = styled.div`
-  input {
-    background-color: white;
-  }
-
-  button {
-    padding: 4px;
-    border: 2px solid black;
-    background-color: white;
-  }
-`;
+import * as S from './MakeInfoPage.style';
 
 const MakeInfoPage = () => {
   const navigate = useNavigate();
@@ -47,24 +35,31 @@ const MakeInfoPage = () => {
   };
 
   return (
-    <Container>
-      <h1>MakeInfoPage</h1>
-      <form>
-        <label htmlFor="intro">intro</label>
-        <input type="text" id="intro" onChange={handleInfoChange} />
-        <br />
-        <label htmlFor="link">link</label>
-        <input type="text" id="link" onChange={handleInfoChange} />
-        <br />
-        <label htmlFor="image">image</label>
-        <input type="file" id="image" onChange={handleInfoChange} />
-        <br />
-      </form>
-      {image && <img src={image} alt="preview" />}
-      <button type="button" onClick={handleSubmitClick}>
-        submit
-      </button>
-    </Container>
+    <S.MakeInfoPageContainer>
+      <S.HeaderContainer>
+        <S.HeaderWrapper>
+          <h1>공연 정보를 입력해주세요</h1>
+        </S.HeaderWrapper>
+        <S.Guide>도움말입니다.</S.Guide>
+      </S.HeaderContainer>
+      <S.MainContainer>
+        <form>
+          <label htmlFor="image">공연 포스터 업로드</label>
+          <input type="file" id="image" onChange={handleInfoChange} />
+          <br />
+          <label htmlFor="intro">공연소개란</label>
+          <input type="text" id="intro" onChange={handleInfoChange} />
+          <br />
+          <label htmlFor="link">공연 관련 링크</label>
+          <input type="text" id="link" onChange={handleInfoChange} />
+          <br />
+        </form>
+        {image && <img src={image} alt="preview" />}
+        <button type="button" onClick={handleSubmitClick}>
+          submit
+        </button>
+      </S.MainContainer>
+    </S.MakeInfoPageContainer>
   );
 };
 
