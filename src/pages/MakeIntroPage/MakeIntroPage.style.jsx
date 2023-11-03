@@ -6,15 +6,13 @@ export const MakeIntroPagerContaienr = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const LogoConatiner = styled.div`
   margin-top: 176px;
 
   height: 418px;
-
-  display: flex;
-  justify-content: center;
 `;
 
 export const MainContainer = styled.div`

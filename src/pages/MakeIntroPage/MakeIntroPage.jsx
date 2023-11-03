@@ -5,7 +5,7 @@ const MakeIntroPage = () => {
   return (
     <S.MakeIntroPagerContaienr>
       <S.LogoConatiner>
-        <Logo height={418} />
+        <Logo height={418} link="/make" />
       </S.LogoConatiner>
       <S.MainContainer>
         <S.ButtonWrapper>
