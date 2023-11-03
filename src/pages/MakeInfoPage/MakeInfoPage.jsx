@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './MakeInfoPage.style';
+import Header from '../../components/Header/Header';
 
 const MakeInfoPage = () => {
   const navigate = useNavigate();
@@ -38,9 +39,10 @@ const MakeInfoPage = () => {
     <S.MakeInfoPageContainer>
       <S.HeaderContainer>
         <S.HeaderWrapper>
-          <h1>공연 정보를 입력해주세요</h1>
+          <Header width={382}>공연 정보를 입력해주세요</Header>
         </S.HeaderWrapper>
         <S.Guide>도움말입니다.</S.Guide>
+        <div>? icon</div>
       </S.HeaderContainer>
       <S.MainContainer>
         <form>

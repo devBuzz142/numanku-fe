@@ -11,6 +11,10 @@ export const MakeInfoPageContainer = styled.div`
 
 export const HeaderContainer = styled.div`
   margin-top: 138px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const HeaderWrapper = styled.div`
