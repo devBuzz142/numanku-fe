@@ -1,4 +1,4 @@
-import { Global, css } from "@emotion/react";
+import { Global, css } from '@emotion/react';
 
 const GlobalStyle = () => {
   return (
@@ -10,6 +10,8 @@ const GlobalStyle = () => {
           margin: 0;
           padding: 0;
           border: none;
+
+          outline: 1px solid red;
         }
 
         *,
