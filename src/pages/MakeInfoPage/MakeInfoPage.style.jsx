@@ -28,9 +28,14 @@ export const HeaderWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Guide = styled.div`
+export const GuideWrapper = styled.div`
   margin-top: 8px;
 
+  display: flex;
+  align-items: center;
+`;
+
+export const Guide = styled.div`
   font-size: 32px;
   font-style: normal;
   font-weight: 400;

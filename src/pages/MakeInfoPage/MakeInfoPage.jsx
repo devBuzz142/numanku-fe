@@ -4,6 +4,7 @@ import * as S from './MakeInfoPage.style';
 import Header from '../../components/Header/Header';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import Icon from '../../components/Icon/Icon';
 
 const MakeInfoPage = () => {
   const navigate = useNavigate();
@@ -39,8 +40,10 @@ const MakeInfoPage = () => {
         <S.HeaderWrapper>
           <Header width={382}>공연 정보를 입력해주세요</Header>
         </S.HeaderWrapper>
-        <S.Guide>도움말입니다.</S.Guide>
-        <div>? icon</div>
+        <S.GuideWrapper>
+          <S.Guide>도움말입니다.</S.Guide>
+          <Icon name="HELP_CIRCLE" width={32} height={32} />
+        </S.GuideWrapper>
       </S.HeaderContainer>
       <S.MainContainer>
         <S.Form>
