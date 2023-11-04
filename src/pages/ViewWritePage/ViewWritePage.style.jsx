@@ -11,6 +11,21 @@ export const ViewWritePageContainer = styled.div`
   background-color: #FEF8E6;
 `;
 
+export const HeaderContainer = styled.div`
+  margin-top: 138px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const HeaderWrapper = styled.div`
+  height: 192px;
+
+  display: flex;
+  flex-direction: column;
+`;
+
 export const MainContainer = styled.div`
   margin-top: 82px;
   border-radius: 20px;
@@ -35,8 +50,4 @@ export const UndoWrapper = styled.div`
   margin-left: 77px;
 
   display: flex;
-`
-
-export const KukiImageWrapper = styled.div`
-
 `
