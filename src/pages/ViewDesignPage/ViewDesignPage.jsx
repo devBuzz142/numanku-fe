@@ -38,7 +38,7 @@ const ViewDesignPage = () => {
   
   return (
     <Container>
-      <h1>MakeKukiPage</h1>
+      <h1>ViewDesignPage</h1>
       <form>
         <label htmlFor="content">content</label>
         <input type="text" id="content" onChange={handleKukiChange} />
