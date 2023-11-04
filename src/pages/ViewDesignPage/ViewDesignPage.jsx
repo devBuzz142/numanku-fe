@@ -38,7 +38,7 @@ const ViewDesignPage = () => {
   
   return (
     <Container>
-      <h1>MakeKukiPage</h1>
+      <h1>ViewDesignPage</h1>
       <form>
         <label htmlFor="content">content</label>
         <input type="text" id="content" onChange={handleKukiChange} />
@@ -56,6 +56,7 @@ const ViewDesignPage = () => {
         <input type="text" id="name" onChange={handleKukiChange} />
         <input type="text" id="content" onChange={handleKukiChange} />
         <br />
+
         <label htmlFor="open">public or private</label>
         <select onChange={(e) => handleKukiChange(e)}>
           <option value="public">공개</option>
