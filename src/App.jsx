@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage/HomePage';
 import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
 import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
+import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
 
 function App() {
   const API_END_POINT =
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/view" element={<ViewMainPage />} />
+        <Route path="/view/login" element={<ViewLoginPage />} />
         <Route path="/view/design" element={<ViewDesignPage />} />
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />

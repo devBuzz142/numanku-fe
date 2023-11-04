@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
   const navigate = useNavigate();
   const handleViewClick = () => {
-    navigate('/view/');
+    navigate('/view/login');
   };
   const handleMakeClick = () => {
     navigate('/make/');
