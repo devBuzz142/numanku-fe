@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/view" element={<ViewMainPage />} />
         <Route path="/view/design" element={<ViewDesignPage />} />
-        <Route path="/make" element={<MakeInfoPage />} />
+        <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
