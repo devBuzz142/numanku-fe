@@ -9,15 +9,11 @@ export const MakeCompletePage = styled.div`
   flex-direction: column;
 `;
 
-export const BackIconWrapper = styled.div`
-  margin-top: 100px;
-`;
-
 export const CompleteUIContainer = styled.div`
   width: 650px;
   height: 730px;
 
-  margin-top: 40px;
+  margin-top: 60px;
 
   display: flex;
   flex-direction: column;
@@ -40,7 +36,7 @@ export const CompleteUIContainer = styled.div`
 export const ButtonContainer = styled.div`
   margin-top: 80px;
 
-  height: 500px;
+  height: 660px;
 
   display: flex;
   flex-direction: column;
@@ -55,3 +51,11 @@ export const Button = ({ children, ...props }) => {
     </BaseButton>
   );
 };
+
+export const CodeWrapper = styled.div`
+  font-size: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
