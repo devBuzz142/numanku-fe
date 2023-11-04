@@ -1,15 +1,27 @@
-import { Global, css } from "@emotion/react";
+import { Global, css } from '@emotion/react';
 
 const GlobalStyle = () => {
   return (
     <Global
       styles={css`
+        @font-face {
+          font-family: 'EF_jejudoldam';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2')
+            format('woff2');
+          font-weight: normal;
+          font-style: normal;
+        }
+
         * {
           position: relative;
 
           margin: 0;
           padding: 0;
           border: none;
+
+          outline: 1px solid red;
+
+          font-family: 'EF_jejudoldam', sans-serif;
         }
 
         *,

@@ -30,6 +30,8 @@ module.exports = {
     'no-unused-vars': 'warn', // 개발 효율성 저하
     'import/no-unresolved': 'off', // 경로 효율성
     'react/prop-types': 'warn', // TODO : 추후 변경 예정
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
   },
   // ESLint는 기본적으로 순수한 자바스크립트 코드만 이해(분석)할 수 있다.
   // 확장문법(ts), 최신문법으로 작성한 코드를 린트하기 위해서는 상응하는 parser가 필요하다.
