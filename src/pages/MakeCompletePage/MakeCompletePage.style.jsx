@@ -22,6 +22,19 @@ export const CompleteUIContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-image: ${(props) => `url(${props.poster})`};
+  background-size: cover;
+  isolation: isolate;
+
+  ::after {
+    content: '';
+    position: absolute;
+    background: white;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.4;
+  }
 `;
 
 export const ButtonContainer = styled.div`

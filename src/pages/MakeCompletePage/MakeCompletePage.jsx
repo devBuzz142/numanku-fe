@@ -1,6 +1,7 @@
 import * as S from './MakeCompletePage.style';
 import Icon from '../../components/Icon/Icon';
 import Header from '../../components/Header/Header';
+import TEMP_POSTER from '../../assets/images/temp_poster.jpeg';
 
 const MakeCompletePage = () => {
   return (
@@ -8,7 +9,7 @@ const MakeCompletePage = () => {
       <S.BackIconWrapper>
         <Icon name="BACK_FILL" width={48} height={48} />
       </S.BackIconWrapper>
-      <S.CompleteUIContainer>
+      <S.CompleteUIContainer poster={TEMP_POSTER}>
         <Header>완성!</Header>
         <Header>오븐UI예정</Header>
       </S.CompleteUIContainer>
