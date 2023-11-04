@@ -1,6 +1,7 @@
 import ICON_HELP_CIRCLE from '../../assets/icons/help_circle.png';
 import ICON_IMAGE_CIRCLE from '../../assets/icons/image_circle.svg';
 import ICON_BACK_FILL from '../../assets/icons/back_fill.svg';
+import ICON_UNDO from "../../assets/icons/undo.svg";
 
 const Icon = ({ name, ...props }) => {
   switch (name) {
@@ -10,6 +11,8 @@ const Icon = ({ name, ...props }) => {
       return <img src={ICON_IMAGE_CIRCLE} alt="image_circle" {...props} />;
     case 'BACK_FILL':
       return <img src={ICON_BACK_FILL} alt="back_fill" {...props} />;
+    case 'UNDO':
+      return <img src={ICON_UNDO} alt="undo" {...props} />;
     default:
       return null;
   }
