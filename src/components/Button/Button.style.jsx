@@ -12,7 +12,7 @@ export const Button = styled.button`
   background-color: #bc5148;
   color: #ffffff;
 
-  font-size: 40px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
 `;
