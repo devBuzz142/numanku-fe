@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import BaseButton from '../../components/Button/Button';
 
 export const MakeCompletePage = styled.div`
   padding-left: 50px;
@@ -33,3 +34,11 @@ export const ButtonContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const Button = ({ children, ...props }) => {
+  return (
+    <BaseButton backgroundColor="#857671" color="#FFFFFF" {...props}>
+      {children}
+    </BaseButton>
+  );
+};
