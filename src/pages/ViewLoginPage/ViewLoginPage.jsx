@@ -55,7 +55,7 @@ const ViewLoginPage = () => {
           />
         </S.Form>
         <S.ButtonWrapper>
-          <Button type="button" onClick={() => navigate('/view')}>
+          <Button type="button" onClick={() => navigate('/view/write')}>
             계정 생성
           </Button>
         </S.ButtonWrapper>
