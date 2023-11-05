@@ -9,10 +9,10 @@ export const Button = styled.button`
   padding-top: 20px;
   padding-bottom: 20px;
 
-  background-color: #bc5148;
-  color: #ffffff;
+  background-color: ${(props) => props.backgroundColor || '#BC5148'};
+  color: ${(props) => props.color || '#FFFFFF'};
 
-  font-size: 40px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
 `;

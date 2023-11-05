@@ -29,6 +29,21 @@ const Input = ({ label, id, type = 'text', placeholder, ...props }) => {
     );
   }
 
+  if (id ==='kukiContents') {
+    return (
+      <S.InputContainer>
+        <S.kukiContents
+          type={type}
+          id={id}
+          placeholder={placeholder}
+          onChange={props.onChange}
+          width={props.width}
+        />
+      </S.InputContainer>
+    );
+  };
+
+
   return (
     <S.InputContainer>
       <S.Label htmlFor={id}>{label}</S.Label>
