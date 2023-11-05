@@ -13,16 +13,16 @@ import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
 import ViewWritePage from './pages/ViewWritePage/ViewWritePage';
 
 function App() {
-  const API_END_POINT =
-  'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
+  // const API_END_POINT =
+  // 'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
 
-  const a = async () => {
-    const res = await fetch(API_END_POINT + '/kuki/1');
-    const data = await res.json();
-    console.log(data);
-  };
+  // const a = async () => {
+  //   const res = await fetch(API_END_POINT + '/kuki/1');
+  //   const data = await res.json();
+  //   console.log(data);
+  // };
 
-  a();
+  // a();
   
   return (
     <PageTemplate>
