@@ -15,6 +15,8 @@ export const Label = styled.label`
   font-weight: 400;
   line-height: 150%; /* 48px */
   letter-spacing: -0.352px;
+
+  text-align: ${(props) => props.labelAlign || 'left'};
 `;
 
 export const Input = styled.input`
@@ -22,7 +24,8 @@ export const Input = styled.input`
   height: 100px;
 
   border-radius: 30px;
-  border: 5px solid #4e413b;
+  border: ${(props) => (props.noBorder ? 'none' : '5px solid #4e413b')};
+  background-color: ${(props) => props.backgroundColor};
 
   padding: 5px;
 
