@@ -44,11 +44,24 @@ export const ContentContainer = styled.div`
 
   width: 600px;
   height: 630px;
+`;
 
-  border-radius: 50px;
-  border: 5px solid #4e413b;
+export const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @font-face {
+    font-family: 'UhBeeZZIBA-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/UhBeeZZIBA-Regular.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  font-family: 'UhBeeZZIBA-Regular';
+  font-size: 28px;
 `;

@@ -1,6 +1,7 @@
 import * as S from './ViewKukiPage.style';
 import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
+import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 import TEMP_KUKI from '../../assets/kuki1.svg';
 
 const ViewKukiPage = () => {
@@ -13,7 +14,11 @@ const ViewKukiPage = () => {
         <Header fontSize={48}>작성자 이름</Header>
       </S.HeaderContainer>
       <S.KukiContainer image={TEMP_KUKI}></S.KukiContainer>
-      <S.ContentContainer>방명록 내용</S.ContentContainer>
+      <S.ContentContainer>
+        <SpeechBubble>
+          <S.ContentWrapper>안녕하세요</S.ContentWrapper>
+        </SpeechBubble>
+      </S.ContentContainer>
     </S.ViewKukiPage>
   );
 };
