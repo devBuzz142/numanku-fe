@@ -12,7 +12,7 @@ const ViewLoginPage = () => {
   const [login, setLogin] = useState({
     name: ' ',
     password: ' ',
-    makercode: ' ',
+    makerCode: ' ',
   });
 
   const handleLoginChange = (e) => {
@@ -48,9 +48,9 @@ const ViewLoginPage = () => {
           />
           <Input
             width={550}
-            label="제작번호"
+            label="제작진 비밀번호"
             type="text"
-            id="makercode"
+            id="makerCode"
             onChange={handleLoginChange}
           />
         </S.Form>
