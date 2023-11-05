@@ -56,7 +56,6 @@ const ViewDesignPage = () => {
         <input type="text" id="name" onChange={handleKukiChange} />
         <input type="text" id="content" onChange={handleKukiChange} />
         <br />
-
         <label htmlFor="open">public or private</label>
         <select onChange={(e) => handleKukiChange(e)}>
           <option value="public">공개</option>
