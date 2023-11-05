@@ -17,6 +17,9 @@ const ViewKukiPage = () => {
       <S.ContentContainer>
         <SpeechBubble>
           <S.ContentWrapper>안녕하세요</S.ContentWrapper>
+          <S.HeartWrapper>
+            <Icon name="HEART_LINE" />
+          </S.HeartWrapper>
         </SpeechBubble>
       </S.ContentContainer>
     </S.ViewKukiPage>

@@ -65,3 +65,13 @@ export const ContentWrapper = styled.div`
   font-family: 'UhBeeZZIBA-Regular';
   font-size: 28px;
 `;
+
+export const HeartWrapper = styled.div`
+  position: absolute;
+  bottom: 44px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 66px;
+`;
