@@ -1,8 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 
 import PageTemplate from './pages/PageTemplate/PageTemplate';
-import ViewDesignPage from './pages/ViewDesignPage/ViewDesignPage';
+import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
 import ViewMainPage from './pages/ViewMainPage/ViewMainPage';
+import ViewKukiPage from './pages/ViewKukiPage/ViewKukiPage';
+import ViewDesignPage from './pages/ViewDesignPage/ViewDesignPage';
+import ViewWritePage from './pages/ViewWritePage/ViewWritePage';
 import MakeDesignPage from './pages/MakeDesignPage/MakeDesignPage';
 import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -10,8 +13,6 @@ import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
 import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
 import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
-import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
-import ViewWritePage from './pages/ViewWritePage/ViewWritePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/view" element={<ViewMainPage />} />
         <Route path="/view/login" element={<ViewLoginPage />} />
+        <Route path="/view/kuki" element={<ViewKukiPage />} />
         <Route path="/view/design" element={<ViewDesignPage />} />
         <Route path="/view/write" element={<ViewWritePage />} />
         <Route path="/make" element={<MakeIntroPage />} />
