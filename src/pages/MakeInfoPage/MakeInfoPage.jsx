@@ -13,6 +13,7 @@ const MakeInfoPage = () => {
     intro: '',
     link: '',
     image: '',
+    code: '',
   });
   const [image, setImage] = useState(null);
 
@@ -66,6 +67,13 @@ const MakeInfoPage = () => {
           <Input
             width={550}
             label="공연 관련 링크"
+            type="text"
+            id="link"
+            onChange={handleInfoChange}
+          />
+          <Input
+            width={550}
+            label="제작진 비밀번호"
             type="text"
             id="link"
             onChange={handleInfoChange}

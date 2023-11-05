@@ -8,22 +8,12 @@ import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import HomePage from './pages/HomePage/HomePage';
 import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
+import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
 import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
 import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
 import ViewWritePage from './pages/ViewWritePage/ViewWritePage';
 
 function App() {
-  const API_END_POINT =
-  'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
-
-  const a = async () => {
-    const res = await fetch(API_END_POINT + '/kuki/1');
-    const data = await res.json();
-    console.log(data);
-  };
-
-  a();
-  
   return (
     <PageTemplate>
       <Routes>
@@ -36,7 +26,9 @@ function App() {
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
         <Route path="/make/type" element={<MakeKukiTypePage />} />
+        <Route path="/make/complete" element={<MakeCompletePage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
+
         <Route path="/make/qr" element={<MakeQRPage />} />
       </Routes>
     </PageTemplate>

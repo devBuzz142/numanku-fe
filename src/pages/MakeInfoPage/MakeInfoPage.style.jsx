@@ -44,7 +44,7 @@ export const Guide = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  margin-top: 82px;
+  margin-top: 50px;
   border-radius: 20px;
   padding: 16px;
 
@@ -52,11 +52,12 @@ export const MainContainer = styled.div`
 `;
 
 export const Form = styled.form`
-  height: 688px;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  label {
+    margin-top: 32px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
