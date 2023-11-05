@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from "react-router-dom";
 import Modal from '../../components/Tab/Modal';
@@ -44,35 +44,35 @@ const ViewMainPage = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const API_END_POINT =
-  'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
+  // const API_END_POINT =
+  // 'http://ec2-51-20-132-150.eu-north-1.compute.amazonaws.com:3030';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(API_END_POINT + '/kuki/1');
-        setData((prevData) => [...prevData, ...response.data]);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-      setLoading(false);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const response = await fetch(API_END_POINT + '/kuki/1');
+  //       setData((prevData) => [...prevData, ...response.data]);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //     setLoading(false);
+  //   };
 
-    const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
-      ) {
-        fetchData();
-      }
-    };
+  //   const handleScroll = () => {
+  //     if (
+  //       window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
+  //     ) {
+  //       fetchData();
+  //     }
+  //   };
     
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // });
   
   return (
     <Container>
