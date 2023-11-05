@@ -68,10 +68,30 @@ export const ContentWrapper = styled.div`
 
 export const HeartWrapper = styled.div`
   position: absolute;
-  bottom: 44px;
+  bottom: 36px;
 
   left: 50%;
   transform: translateX(-50%);
 
-  width: 66px;
+  width: 72px;
+`;
+
+export const BadgeWrapper = styled.div`
+  right: -20px;
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+
+  z-index: 1;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.22px;
+
+  color: #4e413b;
 `;

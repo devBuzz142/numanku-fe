@@ -2,6 +2,8 @@ import * as S from './ViewKukiPage.style';
 import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
 import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
+import Badge from '../../components/Badge/Badge';
+
 import TEMP_KUKI from '../../assets/kuki1.svg';
 
 const ViewKukiPage = () => {
@@ -18,6 +20,9 @@ const ViewKukiPage = () => {
         <SpeechBubble>
           <S.ContentWrapper>안녕하세요</S.ContentWrapper>
           <S.HeartWrapper>
+            <S.BadgeWrapper>
+              <Badge>100</Badge>
+            </S.BadgeWrapper>
             <Icon name="HEART_LINE" />
           </S.HeartWrapper>
         </SpeechBubble>
