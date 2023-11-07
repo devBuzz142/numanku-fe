@@ -15,6 +15,7 @@ import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
 import MakeQRPage from './pages/MakeQRPage/MakeQRPage';
 
 function App() {
+
   return (
     <PageTemplate>
       <Routes>
@@ -30,7 +31,6 @@ function App() {
         <Route path="/make/type" element={<MakeKukiTypePage />} />
         <Route path="/make/complete" element={<MakeCompletePage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
-
         <Route path="/make/qr" element={<MakeQRPage />} />
       </Routes>
     </PageTemplate>

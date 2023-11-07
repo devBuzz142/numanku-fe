@@ -38,6 +38,21 @@ const Input = ({
     );
   }
 
+  if (id ==='KukiContents') {
+    return (
+      <S.InputContainer>
+        <S.KukiContents
+          type={type}
+          id={id}
+          placeholder={placeholder}
+          onChange={props.onChange}
+          width={props.width}
+        />
+      </S.InputContainer>
+    );
+  };
+
+
   return (
     <S.InputContainer>
       <S.Label htmlFor={id} labelAlign={labelAlign}>

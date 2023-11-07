@@ -1,6 +1,9 @@
 import ICON_HELP_CIRCLE from '../../assets/icons/help_circle.png';
 import ICON_IMAGE_CIRCLE from '../../assets/icons/image_circle.svg';
 import ICON_BACK_FILL from '../../assets/icons/back_fill.svg';
+import ICON_UNDO from "../../assets/icons/undo.svg";
+import ICON_CHECKBOX from "../../assets/icons/check_box.svg";
+import ICON_DIVIDE_LINE from "../../assets/icons/divide_line.svg";
 import ICON_UNDO from '../../assets/icons/undo.svg';
 import ICON_HEART_LINE from '../../assets/icons/heart_line.svg';
 
@@ -14,6 +17,10 @@ const Icon = ({ name, ...props }) => {
       return <img src={ICON_BACK_FILL} alt="back_fill" {...props} />;
     case 'UNDO':
       return <img src={ICON_UNDO} alt="undo" {...props} />;
+    case 'CHECKBOX':
+      return <img src={ICON_CHECKBOX} alt="checkbox" {...props} />;
+    case 'DIVIDE_LINE':
+      return <img src={ICON_DIVIDE_LINE} alt="divide_line" {...props} />;
     case 'HEART_LINE':
       return <img src={ICON_HEART_LINE} alt="heart_line" {...props} />;
     default:

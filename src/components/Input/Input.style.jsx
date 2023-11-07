@@ -32,6 +32,19 @@ export const Input = styled.input`
   font-size: 24px;
 `;
 
+
+export const KukiContents = styled.input`
+  width: ${(props) => props.width + 'px' || '100%'};
+  height: 630px;
+
+  border-radius: 30px;
+  border: 5px solid #4e413b;
+
+  padding: 5px;
+
+  font-size: 24px;
+`;
+
 export const ImageUploadButton = styled.button`
   width: ${(props) => props.width + 'px' || '100%'};
   height: ${(props) => props.width + 'px' || '100%'};
