@@ -38,6 +38,9 @@ const ViewLoginPage = () => {
             type="text"
             id="name"
             onChange={handleLoginChange}
+            backgroundColor={'#D9D9D9'}
+            noBorder
+            labelAlign="center"
           />
           <Input
             width={550}
@@ -45,6 +48,9 @@ const ViewLoginPage = () => {
             type="text"
             id="password"
             onChange={handleLoginChange}
+            backgroundColor={'#D9D9D9'}
+            noBorder
+            labelAlign="center"
           />
           <Input
             width={550}
@@ -52,6 +58,9 @@ const ViewLoginPage = () => {
             type="text"
             id="makerCode"
             onChange={handleLoginChange}
+            backgroundColor={'#D9D9D9'}
+            noBorder
+            labelAlign="center"
           />
         </S.Form>
         <S.ButtonWrapper>
@@ -65,7 +74,7 @@ const ViewLoginPage = () => {
         </S.GuideWrapper>
       </S.MainContainer>
     </S.ViewLoginPageContainer>
-  )
-}
+  );
+};
 
 export default ViewLoginPage;

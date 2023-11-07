@@ -4,7 +4,7 @@ export const Header = styled.div`
   width: ${(props) => props.width}px;
 
   font-family: EF_jejudoldam;
-  font-size: 64px;
+  font-size: ${(props) => props.fontSize || 64}px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 96px */

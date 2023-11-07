@@ -4,6 +4,8 @@ import ICON_BACK_FILL from '../../assets/icons/back_fill.svg';
 import ICON_UNDO from "../../assets/icons/undo.svg";
 import ICON_CHECKBOX from "../../assets/icons/check_box.svg";
 import ICON_DIVIDE_LINE from "../../assets/icons/divide_line.svg";
+import ICON_UNDO from '../../assets/icons/undo.svg';
+import ICON_HEART_LINE from '../../assets/icons/heart_line.svg';
 
 const Icon = ({ name, ...props }) => {
   switch (name) {
@@ -19,6 +21,8 @@ const Icon = ({ name, ...props }) => {
       return <img src={ICON_CHECKBOX} alt="checkbox" {...props} />;
     case 'DIVIDE_LINE':
       return <img src={ICON_DIVIDE_LINE} alt="divide_line" {...props} />;
+    case 'HEART_LINE':
+      return <img src={ICON_HEART_LINE} alt="heart_line" {...props} />;
     default:
       return null;
   }

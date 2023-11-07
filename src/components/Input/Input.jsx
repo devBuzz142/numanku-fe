@@ -2,7 +2,16 @@ import { useRef, useState } from 'react';
 import * as S from './Input.style';
 import Icon from '../Icon/Icon';
 
-const Input = ({ label, id, type = 'text', placeholder, ...props }) => {
+const Input = ({
+  id,
+  type = 'text',
+  label,
+  labelAlign = 'left',
+  placeholder,
+  backgroundColor,
+  noBorder = false,
+  ...props
+}) => {
   const imageInputRef = useRef(null);
 
   if (type === 'image') {
@@ -46,13 +55,17 @@ const Input = ({ label, id, type = 'text', placeholder, ...props }) => {
 
   return (
     <S.InputContainer>
-      <S.Label htmlFor={id}>{label}</S.Label>
+      <S.Label htmlFor={id} labelAlign={labelAlign}>
+        {label}
+      </S.Label>
       <S.Input
         type={type}
         id={id}
         placeholder={placeholder}
         onChange={props.onChange}
         width={props.width}
+        backgroundColor={backgroundColor}
+        noBorder={noBorder}
       />
     </S.InputContainer>
   );
