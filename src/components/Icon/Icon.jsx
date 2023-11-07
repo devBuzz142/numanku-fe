@@ -4,7 +4,6 @@ import ICON_BACK_FILL from '../../assets/icons/back_fill.svg';
 import ICON_UNDO from "../../assets/icons/undo.svg";
 import ICON_CHECKBOX from "../../assets/icons/check_box.svg";
 import ICON_DIVIDE_LINE from "../../assets/icons/divide_line.svg";
-import ICON_UNDO from '../../assets/icons/undo.svg';
 import ICON_HEART_LINE from '../../assets/icons/heart_line.svg';
 
 const Icon = ({ name, ...props }) => {
