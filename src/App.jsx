@@ -6,6 +6,7 @@ import ViewMainPage from './pages/ViewMainPage/ViewMainPage';
 import ViewKukiPage from './pages/ViewKukiPage/ViewKukiPage';
 import ViewDesignPage from './pages/ViewDesignPage/ViewDesignPage';
 import ViewWritePage from './pages/ViewWritePage/ViewWritePage';
+import ViewCompletePage from './pages/ViewCompletePage/ViewCompletePage';
 import MakeDesignPage from './pages/MakeDesignPage/MakeDesignPage';
 import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/view/kuki" element={<ViewKukiPage />} />
         <Route path="/view/design" element={<ViewDesignPage />} />
         <Route path="/view/write" element={<ViewWritePage />} />
+        <Route path="/view/complete" element={<ViewCompletePage />} />
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
