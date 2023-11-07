@@ -5,6 +5,8 @@ import Button from '../../components/Button/Button';
 import Icon from '../../components/Icon/Icon';
 import Input from '../../components/Input/Input';
 import kuki1 from '../../assets/kuki1.svg'
+import Header from '../../components/Header/Header'
+import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 
 const ViewWritePage = () => {
   const navigate = useNavigate();
@@ -31,7 +33,9 @@ const ViewWritePage = () => {
         <S.UndoWrapper>
           <Icon name="BACK_FILL" width={45} height={45} />
         </S.UndoWrapper>
-
+        <S.NameWrapper>
+          <Header fontSize={48}>이름</Header>
+        </S.NameWrapper>
       </S.TopContainer>
       <S.KukiContainer>
         <img src={kuki1} alt="kuki1" width="450px" height="450px"></img>
