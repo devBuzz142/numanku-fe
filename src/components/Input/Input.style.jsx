@@ -62,10 +62,15 @@ export const ImageInput = styled.input`
 `;
 
 export const Textarea = styled.input`
-  width: ${(props) => props.width + 'px' || '100%'};
+  width: 100%;
+  max-width: 100%;
   height: 630px;
 
   padding: 5px;
 
   font-size: 30px;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 `;
