@@ -28,12 +28,10 @@ const ViewWritePage = () => {
   return (
     <S.ViewWritePageContainer>
       <S.TopContainer>
-          <S.UndoWrapper>
-            <Icon name="UNDO" width={45} height={45} />
-          </S.UndoWrapper>
-          <S.NameWrapper>
-            이름
-          </S.NameWrapper>
+        <S.UndoWrapper>
+          <Icon name="BACK_FILL" width={45} height={45} />
+        </S.UndoWrapper>
+
       </S.TopContainer>
       <S.KukiContainer>
         <img src={kuki1} alt="kuki1" width="450px" height="450px"></img>
