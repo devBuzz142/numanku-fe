@@ -41,7 +41,7 @@ const Input = ({
   if (id ==='KukiContents') {
     return (
       <S.InputContainer>
-        <S.KukiContents
+        <S.Textarea
           type={type}
           id={id}
           placeholder={placeholder}
@@ -52,6 +52,21 @@ const Input = ({
     );
   };
 
+  if (type === "Textarea") {
+    return (
+      <S.InputContainer>
+        <S.Textarea
+          type={type}
+          id={id}
+          placeholder={placeholder}
+          onChange={props.onChange}
+          width={props.width}
+          backgroundColor={backgroundColor}
+          noBorder={noBorder}
+        />
+      </S.InputContainer>
+    )
+  }
 
   return (
     <S.InputContainer>

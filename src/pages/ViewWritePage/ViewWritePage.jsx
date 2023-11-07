@@ -41,13 +41,15 @@ const ViewWritePage = () => {
         <img src={kuki1} alt="kuki1" width="450px" height="450px"></img>
       </S.KukiContainer>
       <S.KukiContentsContainer>
-        <Input
-          width={600}
-          label="방명록 내용"
-          type="text"
-          id="KukiContents"
-          onChange={handleKukiContentsChange}
-        />
+        <SpeechBubble>
+          <Input
+            width={600}
+            label="방명록 내용"
+            type="Textarea"
+            id="KukiContents"
+            onChange={handleKukiContentsChange}
+          />
+        </SpeechBubble>
       </S.KukiContentsContainer>
       <S.CheckBoxContainer>
         <S.AnonymousWrapper>

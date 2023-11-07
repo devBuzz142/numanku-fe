@@ -60,3 +60,12 @@ export const ImageUploadButton = styled.button`
 export const ImageInput = styled.input`
   display: none;
 `;
+
+export const Textarea = styled.input`
+  width: ${(props) => props.width + 'px' || '100%'};
+  height: 630px;
+
+  padding: 5px;
+
+  font-size: 30px;
+`;
