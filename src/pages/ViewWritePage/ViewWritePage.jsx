@@ -43,7 +43,7 @@ const ViewWritePage = () => {
           width={600}
           label="방명록 내용"
           type="text"
-          id="kukiContents"
+          id="KukiContents"
           onChange={handleKukiContentsChange}
         />
       </S.KukiContentsContainer>

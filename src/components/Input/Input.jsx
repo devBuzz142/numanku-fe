@@ -29,10 +29,10 @@ const Input = ({ label, id, type = 'text', placeholder, ...props }) => {
     );
   }
 
-  if (id ==='kukiContents') {
+  if (id ==='KukiContents') {
     return (
       <S.InputContainer>
-        <S.kukiContents
+        <S.KukiContents
           type={type}
           id={id}
           placeholder={placeholder}

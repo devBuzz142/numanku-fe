@@ -30,7 +30,7 @@ export const Input = styled.input`
 `;
 
 
-export const kukiContents = styled.input`
+export const KukiContents = styled.input`
   width: ${(props) => props.width + 'px' || '100%'};
   height: 630px;
 
