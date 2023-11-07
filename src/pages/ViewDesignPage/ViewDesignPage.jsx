@@ -33,7 +33,7 @@ const ViewDesignPage = () => {
   }
 
   const handleSubmitClick = () => {
-    navigate('/view');
+    navigate('/view/write');
   }
   
   return (

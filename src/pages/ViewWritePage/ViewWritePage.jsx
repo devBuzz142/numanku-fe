@@ -65,7 +65,7 @@ const ViewWritePage = () => {
         </S.PrivateWrapper>
       </S.CheckBoxContainer>
       <S.ButtonWrapper>
-          <Button type="button" onClick={() => navigate('/view')}>
+          <Button type="button" onClick={() => navigate('/view/complete')}>
           선물하기
           </Button>
         </S.ButtonWrapper>
