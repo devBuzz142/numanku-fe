@@ -124,3 +124,11 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
+export const textarea = styled.div`
+  width: 600px;
+
+  height: 630px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+`;
+

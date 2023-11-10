@@ -42,13 +42,17 @@ const ViewWritePage = () => {
       </S.KukiContainer>
       <S.KukiContentsContainer>
         <SpeechBubble>
-          <Input
-            width={600}
-            label="방명록 내용"
-            type="Textarea"
-            id="KukiContents"
-            onChange={handleKukiContentsChange}
-          />
+          <S.textarea>
+            <Input
+              width={600}
+              label="방명록내용"
+              type="textarea"
+              id="kukiContents"
+              onChange={handleKukiContentsChange}
+              backgroundColor={'#D9D9D9'}
+              noBorder
+            />
+          </S.textarea>
         </SpeechBubble>
       </S.KukiContentsContainer>
       <S.CheckBoxContainer>
