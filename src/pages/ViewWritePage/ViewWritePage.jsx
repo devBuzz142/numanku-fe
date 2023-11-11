@@ -5,6 +5,8 @@ import Button from '../../components/Button/Button';
 import Icon from '../../components/Icon/Icon';
 import Input from '../../components/Input/Input';
 import kuki1 from '../../assets/kuki1.svg'
+import Header from '../../components/Header/Header'
+import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 
 const ViewWritePage = () => {
   const navigate = useNavigate();
@@ -28,24 +30,30 @@ const ViewWritePage = () => {
   return (
     <S.ViewWritePageContainer>
       <S.TopContainer>
-          <S.UndoWrapper>
-            <Icon name="UNDO" width={45} height={45} />
-          </S.UndoWrapper>
-          <S.NameWrapper>
-            이름
-          </S.NameWrapper>
+        <S.UndoWrapper>
+          <Icon name="BACK_FILL" width={45} height={45} />
+        </S.UndoWrapper>
+        <S.NameWrapper>
+          <Header fontSize={48}>이름</Header>
+        </S.NameWrapper>
       </S.TopContainer>
       <S.KukiContainer>
         <img src={kuki1} alt="kuki1" width="450px" height="450px"></img>
       </S.KukiContainer>
       <S.KukiContentsContainer>
-        <Input
-          width={600}
-          label="방명록 내용"
-          type="text"
-          id="KukiContents"
-          onChange={handleKukiContentsChange}
-        />
+        <SpeechBubble>
+          <S.textarea>
+            <Input
+              width={600}
+              label="방명록내용"
+              type="textarea"
+              id="kukiContents"
+              onChange={handleKukiContentsChange}
+              backgroundColor={'#D9D9D9'}
+              noBorder
+            />
+          </S.textarea>
+        </SpeechBubble>
       </S.KukiContentsContainer>
       <S.CheckBoxContainer>
         <S.AnonymousWrapper>
@@ -63,7 +71,7 @@ const ViewWritePage = () => {
         </S.PrivateWrapper>
       </S.CheckBoxContainer>
       <S.ButtonWrapper>
-          <Button type="button" onClick={() => navigate('/view')}>
+          <Button type="button" onClick={() => navigate('/view/complete')}>
           선물하기
           </Button>
         </S.ButtonWrapper>

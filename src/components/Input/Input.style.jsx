@@ -60,3 +60,17 @@ export const ImageUploadButton = styled.button`
 export const ImageInput = styled.input`
   display: none;
 `;
+
+export const textarea = styled.textarea`
+  width: 750px;
+  height: 630px;
+
+  padding: 5px;
+
+  font-size: 30px;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+`;

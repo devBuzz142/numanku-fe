@@ -38,20 +38,21 @@ const Input = ({
     );
   }
 
-  if (id ==='KukiContents') {
+  if (type === "textarea") {
     return (
       <S.InputContainer>
-        <S.KukiContents
+        <S.textarea
           type={type}
           id={id}
           placeholder={placeholder}
           onChange={props.onChange}
           width={props.width}
+          backgroundColor={backgroundColor}
+          noBorder={noBorder}
         />
       </S.InputContainer>
-    );
-  };
-
+    )
+  }
 
   return (
     <S.InputContainer>

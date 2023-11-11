@@ -57,7 +57,8 @@ export const KukiContainer = styled.div`
   border-radius: 20px;
   padding: 16px;
 
-  width: 100%;
+  width: 600px;
+  height: 630px;
 
   background-color: rgba(255, 255, 255, 0.3);
 
@@ -122,3 +123,12 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const textarea = styled.div`
+  width: 600px;
+
+  height: 630px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+`;
+
