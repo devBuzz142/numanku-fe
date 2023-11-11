@@ -38,10 +38,10 @@ const Input = ({
     );
   }
 
-  if (type === "textarea") {
+  if (type === 'textarea') {
     return (
       <S.InputContainer>
-        <S.textarea
+        <S.Textarea
           type={type}
           id={id}
           placeholder={placeholder}
@@ -51,7 +51,7 @@ const Input = ({
           noBorder={noBorder}
         />
       </S.InputContainer>
-    )
+    );
   }
 
   return (

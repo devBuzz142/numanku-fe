@@ -32,7 +32,6 @@ export const Input = styled.input`
   font-size: 24px;
 `;
 
-
 export const KukiContents = styled.input`
   width: ${(props) => props.width + 'px' || '100%'};
   height: 630px;
@@ -61,7 +60,7 @@ export const ImageInput = styled.input`
   display: none;
 `;
 
-export const textarea = styled.textarea`
+export const Textarea = styled.textarea`
   width: 750px;
   height: 630px;
 
