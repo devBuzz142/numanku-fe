@@ -1,9 +1,13 @@
 import * as S from './MakeDesignPage.style';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
-import ColorPalette from '../../components/ColorPalette/ColorPalette';
+import ColorPalette, {
+  useColorPalette,
+} from '../../components/ColorPalette/ColorPalette';
 
 const MakeDesignPage = () => {
+  const [activeColor, handleColorChange] = useColorPalette();
+
   return (
     <S.MakeDesignPage>
       <S.ControllerContainer>
@@ -23,7 +27,10 @@ const MakeDesignPage = () => {
             <div>쿠키 그림</div>
           </S.DrawingTab>
           <S.CollorPalleteWrapper>
-            <ColorPalette />
+            <ColorPalette
+              activeColor={activeColor}
+              handleColorChange={handleColorChange}
+            />
           </S.CollorPalleteWrapper>
           <S.ButtonWrapper>
             <Button width={660}>포장하기</Button>

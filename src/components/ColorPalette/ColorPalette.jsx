@@ -33,11 +33,19 @@ const rgbaToHex = (r, g, b, a) => {
   return `#${hexR}${hexG}${hexB}${hexA}`;
 };
 
-const ColorPalette = ({ colors = COLORS }) => {
+export const useColorPalette = () => {
   const [activeColor, setActiveColor] = useState(0);
 
   const handleColorChange = (color) => setActiveColor(color);
 
+  return [activeColor, handleColorChange];
+};
+
+const ColorPalette = ({
+  colors = COLORS,
+  activeColor = 0,
+  handleColorChange,
+}) => {
   return (
     <S.ColorPalette>
       <S.ColorTab>
