@@ -1,6 +1,7 @@
 import * as S from './MakeDesignPage.style';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import ColorPalette from '../../components/ColorPalette/ColorPalette';
 
 const MakeDesignPage = () => {
   return (
@@ -22,8 +23,7 @@ const MakeDesignPage = () => {
             <div>쿠키 그림</div>
           </S.DrawingTab>
           <S.CollorPalleteWrapper>
-            <div>ColorPalette</div>
-            <div>ColorPalette</div>
+            <ColorPalette />
           </S.CollorPalleteWrapper>
           <S.ButtonWrapper>
             <Button width={660}>포장하기</Button>

@@ -57,17 +57,25 @@ export const Controller = styled.div`
 
 export const MenuTab = styled.div`
   display: flex;
+
+  background-color: white;
 `;
 
 export const DrawingTab = styled.div`
   display: flex;
+
+  background-color: white;
 `;
 
 export const ColorTab = styled.div`
   display: flex;
+
+  background-color: white;
 `;
 
-export const CollorPalleteWrapper = styled.div``;
+export const CollorPalleteWrapper = styled.div`
+  width: 660px;
+`;
 
 export const ButtonWrapper = styled.div`
   margin-bottom: 8px;
