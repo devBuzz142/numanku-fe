@@ -10,20 +10,14 @@ export const MakeDesignPage = styled.div`
 
   border-radius: 30px;
   border: 5px solid #4e413b;
-`;
 
-export const HeaderWrapper = styled.div`
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  width: 368px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 export const ControllerContainer = styled.div`
-  bottom: 0;
-
-  width: 710px;
+  width: 700px;
 `;
 
 export const ToolWrapper = styled.div`
@@ -54,6 +48,11 @@ export const Tool = styled.div`
 export const Controller = styled.div`
   border-radius: 30px;
   background: #4e413b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const MenuTab = styled.div`
@@ -70,4 +69,6 @@ export const ColorTab = styled.div`
 
 export const CollorPalleteWrapper = styled.div``;
 
-export const ButtonWrapper = styled.div``;
+export const ButtonWrapper = styled.div`
+  margin-bottom: 8px;
+`;

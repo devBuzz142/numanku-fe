@@ -5,12 +5,6 @@ import Button from '../../components/Button/Button';
 const MakeDesignPage = () => {
   return (
     <S.MakeDesignPage>
-      <S.HeaderWrapper>
-        <Header width={368} height={284} color={'rgba(78, 65, 59, 0.40)'}>
-          <div>자유롭게</div>
-          <div>그려주세요!</div>
-        </Header>
-      </S.HeaderWrapper>
       <S.ControllerContainer>
         <S.ToolWrapper>
           <S.Tool>펜</S.Tool>
@@ -32,8 +26,8 @@ const MakeDesignPage = () => {
             <div>ColorPalette</div>
           </S.CollorPalleteWrapper>
           <S.ButtonWrapper>
-            <Button>포장하기</Button>
-          </S.ButtonWrapper>{' '}
+            <Button width={660}>포장하기</Button>
+          </S.ButtonWrapper>
         </S.Controller>
       </S.ControllerContainer>
     </S.MakeDesignPage>
