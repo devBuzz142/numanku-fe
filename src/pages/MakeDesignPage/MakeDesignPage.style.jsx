@@ -30,8 +30,8 @@ export const ToolWrapper = styled.div`
 `;
 
 export const Tool = styled.div`
-  width: 96px;
-  height: 96px;
+  width: 88px;
+  height: 88px;
 
   border: none;
   border-radius: 50%;
