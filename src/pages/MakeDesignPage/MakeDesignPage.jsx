@@ -7,7 +7,7 @@ import ColorPalette, {
 import KUKI1 from '../../assets/kuki1.svg';
 import KUKI2 from '../../assets/kuki2.svg';
 import KUKI3 from '../../assets/kuki3.svg';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
@@ -19,6 +19,24 @@ const MakeDesignPage = () => {
     innerColorTab: 0,
   });
 
+  const canvasRef = useRef(null);
+  const [canvasCtx, setCanvasCtx] = useState(null);
+  const [isDrawing, setIsDrawing] = useState(false);
+
+  useEffect(() => {
+    const initCtx = () => {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext('2d');
+      setCanvasCtx(ctx);
+    };
+
+    initCtx();
+
+    return () => {
+      setCanvasCtx(null);
+    };
+  }, [canvasRef]);
+
   const hanleMenuTabChange = (name, index) =>
     setActiveTab({
       ...activeTab,
@@ -27,10 +45,34 @@ const MakeDesignPage = () => {
 
   const handleToolChange = (index) => setActiveTool(index);
 
+  const draw = (e) => {
+    // mouse position
+    const mouseX = e.nativeEvent.offsetX;
+    const mouseY = e.nativeEvent.offsetY;
+    // drawing
+    if (!isDrawing) {
+      canvasCtx.beginPath();
+      canvasCtx.moveTo(mouseX, mouseY);
+    } else {
+      canvasCtx.lineTo(mouseX, mouseY);
+      canvasCtx.stroke();
+    }
+  };
+
   return (
     <S.MakeDesignPage>
       <Header>자유롭게 그려주세요!</Header>
-      <S.CanvasWrapper></S.CanvasWrapper>
+      <S.CanvasWrapper>
+        <canvas
+          id="canvas"
+          width="680"
+          height="680"
+          ref={canvasRef}
+          onMouseDown={() => setIsDrawing(true)}
+          onMouseUp={() => setIsDrawing(false)}
+          onMouseMove={draw}
+        ></canvas>
+      </S.CanvasWrapper>
       <S.ControllerContainer>
         <S.ToolWrapper>
           <S.Tool
