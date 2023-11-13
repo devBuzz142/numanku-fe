@@ -32,7 +32,8 @@ export const ColorTabItem = styled.div`
   height: 58px;
 
   border-radius: 50%;
-  border: ${({ active }) => (active ? '5px solid #FEF8E6' : 'none')};
+  border: ${({ active, isBlack }) =>
+    active ? (isBlack ? '6px solid grey' : '6px solid black') : 'none'};
 
   background-color: ${({ color }) => color};
 `;

@@ -7,31 +7,81 @@ import ColorPalette, {
 import KUKI1 from '../../assets/kuki1.svg';
 import KUKI2 from '../../assets/kuki2.svg';
 import KUKI3 from '../../assets/kuki3.svg';
+import { useState } from 'react';
 
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
+  const [activeTool, setActiveTool] = useState(0); // 0: pen, 1: eraser
+  const [activeTab, setActiveTab] = useState({
+    menuTab: 0,
+    outterTab: 0,
+    innerTab: 0,
+    innerColorTab: 0,
+  });
+
+  const hanleMenuTabChange = (name, index) =>
+    setActiveTab({
+      ...activeTab,
+      [name]: index,
+    });
+
+  const handleToolChange = (index) => setActiveTool(index);
 
   return (
     <S.MakeDesignPage>
       <S.ControllerContainer>
         <S.ToolWrapper>
-          <S.Tool>펜</S.Tool>
-          <S.Tool>지우개</S.Tool>
+          <S.Tool
+            selected={0 === activeTool}
+            onClick={() => handleToolChange(0)}
+          >
+            펜
+          </S.Tool>
+          <S.Tool
+            selected={1 === activeTool}
+            onClick={() => handleToolChange(1)}
+          >
+            지우개
+          </S.Tool>
         </S.ToolWrapper>
         <S.Controller>
           <S.MenuTab>
-            <S.MenuTabItem selected>쿠키 모양</S.MenuTabItem>
-            <S.MenuTabItem>쿠키 그림</S.MenuTabItem>
-            <S.MenuTabItem>그림 색상</S.MenuTabItem>
+            <S.MenuTabItem
+              selected={0 === activeTab.menuTab}
+              onClick={() => hanleMenuTabChange('menuTab', 0)}
+            >
+              쿠키 모양
+            </S.MenuTabItem>
+            <S.MenuTabItem
+              selected={1 === activeTab.menuTab}
+              onClick={() => hanleMenuTabChange('menuTab', 1)}
+            >
+              쿠키 그림
+            </S.MenuTabItem>
+            <S.MenuTabItem
+              selected={2 === activeTab.menuTab}
+              onClick={() => hanleMenuTabChange('menuTab', 2)}
+            >
+              그림 색상
+            </S.MenuTabItem>
           </S.MenuTab>
           <S.DrawingTab>
-            <S.DrawingTabItem selected>
+            <S.DrawingTabItem
+              selected={0 === activeTab.outterTab}
+              onClick={() => hanleMenuTabChange('outterTab', 0)}
+            >
               <img src={KUKI1} alt="쿠키1" />
             </S.DrawingTabItem>
-            <S.DrawingTabItem>
+            <S.DrawingTabItem
+              selected={1 === activeTab.outterTab}
+              onClick={() => hanleMenuTabChange('outterTab', 1)}
+            >
               <img src={KUKI2} alt="쿠키2" />
             </S.DrawingTabItem>
-            <S.DrawingTabItem>
+            <S.DrawingTabItem
+              selected={2 === activeTab.outterTab}
+              onClick={() => hanleMenuTabChange('outterTab', 2)}
+            >
               <img src={KUKI3} alt="쿠키3" />
             </S.DrawingTabItem>
           </S.DrawingTab>

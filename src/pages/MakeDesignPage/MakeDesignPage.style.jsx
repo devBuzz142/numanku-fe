@@ -33,7 +33,7 @@ export const Tool = styled.div`
   width: 88px;
   height: 88px;
 
-  border: none;
+  border: ${({ selected }) => (selected ? '8px solid black' : 'none')};
   border-radius: 50%;
 
   background-color: white;
@@ -42,7 +42,7 @@ export const Tool = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 28px;
+  font-size: 22px;
 `;
 
 export const Controller = styled.div`

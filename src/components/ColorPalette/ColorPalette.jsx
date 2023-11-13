@@ -54,6 +54,7 @@ const ColorPalette = ({
             <S.ColorTabItem
               key={index}
               color={rgbaToHex(...color, 0.85)}
+              isBlack={index === 0}
               active={activeColor === index}
               onClick={() => handleColorChange(index)}
             />
