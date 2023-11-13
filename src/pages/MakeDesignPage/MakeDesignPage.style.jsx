@@ -56,15 +56,84 @@ export const Controller = styled.div`
 `;
 
 export const MenuTab = styled.div`
+  margin-top: 20px;
+  width: 660px;
+
   display: flex;
+  justify-content: space-between;
+`;
+
+export const MenuTabItem = styled.div`
+  border-radius: 20px;
+  width: 188px;
+  height: 64px;
+
+  background-color: rgba(255, 255, 255, 0.6);
+  color: white;
+
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 54px */
+  letter-spacing: -0.396px;
+
+  ${({ selected }) =>
+    selected &&
+    `
+      background-color: white;
+      color: #BC5148;
+  `}
+
+  ${({ selected }) =>
+    selected &&
+    `
+  ::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -42px;
+
+    width: 188px;
+    height: 60px;
+
+    background-color: white;
+  }
+  `}
+`;
+
+export const DrawingTab = styled.div`
+  margin-top: 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 660px;
+  padding-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  display: flex;
+  justify-content: space-between;
 
   background-color: white;
 `;
 
-export const DrawingTab = styled.div`
-  display: flex;
+export const DrawingTabItem = styled.div`
+  border: 4px solid black;
+  border-radius: 30px;
+  width: 180px;
+  height: 180px;
 
   background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${({ selected }) =>
+    selected &&
+    `
+    border: 6px solid #FC5103;
+    `}
 `;
 
 export const ColorTab = styled.div`
