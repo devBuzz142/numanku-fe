@@ -14,6 +14,15 @@ export const MakeDesignPage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
+`;
+
+export const CanvasWrapper = styled.div`
+  width: 680px;
+  height: 680px;
+
+  border-radius: 30px;
+  border: 5px solid #4e413b;
 `;
 
 export const ControllerContainer = styled.div`
@@ -21,12 +30,12 @@ export const ControllerContainer = styled.div`
 `;
 
 export const ToolWrapper = styled.div`
+  margin-top: 20px;
   width: 100%;
   padding-right: 16px;
 
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: flex-end;
 `;
 
 export const Tool = styled.div`
@@ -46,6 +55,7 @@ export const Tool = styled.div`
 `;
 
 export const Controller = styled.div`
+  margin-top: 20px;
   border-radius: 30px;
   background: #4e413b;
 

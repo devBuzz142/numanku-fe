@@ -29,6 +29,8 @@ const MakeDesignPage = () => {
 
   return (
     <S.MakeDesignPage>
+      <Header>자유롭게 그려주세요!</Header>
+      <S.CanvasWrapper></S.CanvasWrapper>
       <S.ControllerContainer>
         <S.ToolWrapper>
           <S.Tool
