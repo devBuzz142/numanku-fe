@@ -23,6 +23,8 @@ const MakeDesignPage = () => {
   const [canvasCtx, setCanvasCtx] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
 
+  const [tempImg, setTempImg] = useState(null);
+
   useEffect(() => {
     const initCtx = () => {
       const canvas = canvasRef.current;
@@ -59,6 +61,11 @@ const MakeDesignPage = () => {
     }
   };
 
+  const handleDrawStop = () => {
+    setIsDrawing(false);
+    setTempImg(canvasRef.current.toDataURL());
+  };
+
   return (
     <S.MakeDesignPage>
       <Header>자유롭게 그려주세요!</Header>
@@ -69,7 +76,7 @@ const MakeDesignPage = () => {
           height="680"
           ref={canvasRef}
           onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => setIsDrawing(false)}
+          onMouseUp={() => handleDrawStop()}
           onMouseMove={draw}
         ></canvas>
       </S.CanvasWrapper>
@@ -114,7 +121,7 @@ const MakeDesignPage = () => {
               selected={0 === activeTab.outterTab}
               onClick={() => hanleMenuTabChange('outterTab', 0)}
             >
-              <img src={KUKI1} alt="쿠키1" />
+              <img src={tempImg} alt="쿠키1" />
             </S.DrawingTabItem>
             <S.DrawingTabItem
               selected={1 === activeTab.outterTab}
