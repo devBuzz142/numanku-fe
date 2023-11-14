@@ -5,6 +5,7 @@ import ColorPalette, {
   useColorPalette,
 } from '../../components/ColorPalette/ColorPalette';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const COLORS = [
   [0, 0, 0], // black
@@ -18,6 +19,8 @@ const COLORS = [
 ];
 
 const MakeDesignPage = () => {
+  const navigate = useNavigate();
+
   const [activeColor, handleColorChange] = useColorPalette();
   const [activePen, setActivePen] = useState(0);
   const [activeTab, setActiveTab] = useState({
@@ -162,6 +165,10 @@ const MakeDesignPage = () => {
     } else {
       canvasCtx.lineWidth = 6;
     }
+  };
+
+  const handleOvenButtonClick = () => {
+    navigate('/make/complete');
   };
 
   return (
@@ -348,7 +355,9 @@ const MakeDesignPage = () => {
             />
           </S.CollorPalleteWrapper>
           <S.ButtonWrapper>
-            <Button width={660}>오븐에 넣기</Button>
+            <Button width={660} onClick={() => handleOvenButtonClick()}>
+              오븐에 넣기
+            </Button>
           </S.ButtonWrapper>
         </S.Controller>
       </S.ControllerContainer>
