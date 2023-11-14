@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import kuki1 from '../../assets/kuki1.svg';
 
 export const MakeDesignPage = styled.div`
   top: 44px;
@@ -55,6 +54,7 @@ export const ToolWrapper = styled.div`
 `;
 
 export const Tool = styled.div`
+  margin-left: 10px;
   width: 88px;
   height: 88px;
 
@@ -68,6 +68,21 @@ export const Tool = styled.div`
   align-items: center;
 
   font-size: 22px;
+
+  ${({ selected }) =>
+    selected &&
+    `
+    border: 6px solid black;
+  `}
+
+  ${({ penWidth }) => `
+  ::after {
+    content: '';
+    width: 40px;
+    height: ${penWidth}px;
+    background-color: black;
+  }
+  `}
 `;
 
 export const Controller = styled.div`

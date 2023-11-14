@@ -8,7 +8,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
-  // const [activeTool, setActiveTool] = useState(0); // 0: pen, 1: eraser
+  const [activePen, setActivePen] = useState(0);
   const [activeTab, setActiveTab] = useState({
     menu: 0,
     outter: 0,
@@ -44,7 +44,7 @@ const MakeDesignPage = () => {
       const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
       const canvas = canvasRef[activeMenu][activeTab[activeMenu]].current;
       const ctx = canvas.getContext('2d');
-      ctx.lineWidth = 6;
+      ctx.lineWidth = 16;
 
       setCanvasCtx(ctx);
     };
@@ -132,6 +132,18 @@ const MakeDesignPage = () => {
           : img,
       ),
     });
+  };
+
+  const handlePenClick = (index) => {
+    setActivePen(index);
+
+    if (index === 0) {
+      canvasCtx.lineWidth = 16;
+    } else if (index === 1) {
+      canvasCtx.lineWidth = 10;
+    } else {
+      canvasCtx.lineWidth = 6;
+    }
   };
 
   return (
@@ -225,6 +237,21 @@ const MakeDesignPage = () => {
       </S.CanvasWrapper>
       <S.ControllerContainer>
         <S.ToolWrapper>
+          <S.Tool
+            selected={0 == activePen}
+            onClick={() => handlePenClick(0)}
+            penWidth={16}
+          />
+          <S.Tool
+            selected={1 == activePen}
+            onClick={() => handlePenClick(1)}
+            penWidth={12}
+          />
+          <S.Tool
+            selected={2 == activePen}
+            onClick={() => handlePenClick(2)}
+            penWidth={6}
+          />
           <S.Tool onClick={() => erase()}>지우기</S.Tool>
         </S.ToolWrapper>
         <S.Controller>
