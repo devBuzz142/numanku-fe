@@ -7,5 +7,5 @@ export const PageTemplateContainer = styled.div`
   background-color: #f6eddd;
 
   // stop scrolling by mobile touch
-  touch-action: none;
+  touch-action: pinch-zoom;
 `;
