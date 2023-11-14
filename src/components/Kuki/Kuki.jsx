@@ -11,7 +11,7 @@ const Kuki = ({ kuki }) => {
       onClick={() => navigate(`/view/kuki/${kuki.id}`)}
     >
       <S.KukiWrapper likeCount={kuki.likeCount}>
-        <img src={KUKI1} alt="kuki1" />
+        <img src={kuki.image || KUKI1} alt="kuki1" />
       </S.KukiWrapper>
     </S.KukiContainer>
   );

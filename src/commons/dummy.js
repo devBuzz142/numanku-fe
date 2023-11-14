@@ -1,3 +1,6 @@
+import kuki1 from '../assets/kuki_images/kuki_01.png';
+import kuki2 from '../assets/kuki_images/kuki_02.png';
+
 export const TEMP_KUKIES = [
   {
     id: 1,
@@ -8,6 +11,7 @@ export const TEMP_KUKIES = [
     isLike: false,
     likeCount: 0,
     left: 100,
+    image: kuki1,
   },
   {
     id: 2,
@@ -18,6 +22,18 @@ export const TEMP_KUKIES = [
     isLike: false,
     likeCount: 2,
     left: 300,
+    image: kuki2,
+  },
+  {
+    id: 2,
+    writer: 'devbuzz142',
+    content: '쿠키2',
+    isPublic: true,
+    isAnonymous: false,
+    isLike: false,
+    likeCount: 2,
+    left: 300,
+    image: kuki2,
   },
   {
     id: 3,
@@ -28,6 +44,7 @@ export const TEMP_KUKIES = [
     isLike: false,
     likeCount: 2,
     left: 0,
+    image: kuki2,
   },
   {
     id: 4,
@@ -38,6 +55,7 @@ export const TEMP_KUKIES = [
     isLike: false,
     likeCount: 5,
     left: 100,
+    image: kuki1,
   },
   {
     id: 5,
@@ -48,5 +66,6 @@ export const TEMP_KUKIES = [
     isLike: false,
     likeCount: 0,
     left: 600,
+    image: kuki1,
   },
 ];

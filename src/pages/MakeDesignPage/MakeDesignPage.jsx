@@ -4,8 +4,11 @@ import Button from '../../components/Button/Button';
 import ColorPalette, {
   useColorPalette,
 } from '../../components/ColorPalette/ColorPalette';
+
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import mergeImages from 'merge-images';
 
 const COLORS = [
   [0, 0, 0], // black
@@ -74,7 +77,6 @@ const MakeDesignPage = () => {
     if (!canvasCtx) return;
 
     canvasCtx.strokeStyle = `rgba(${COLORS[activeColor].join(',')}, 0.85)`; // 색상
-    console.log(canvasCtx.strokeStyle);
   }, [canvasCtx, activeColor]);
 
   const handleMenuTabChange = (name, index) => {
@@ -169,6 +171,14 @@ const MakeDesignPage = () => {
 
   const handleOvenButtonClick = () => {
     navigate('/make/complete');
+
+    // mergeImages([drawingImg.outter[0], drawingImg.inner[0]]).then((b64) => {
+    //   // download
+    //   const link = document.createElement('a');
+    //   link.download = 'cookie.png';
+    //   link.href = b64;
+    //   link.click();
+    // });
   };
 
   return (
