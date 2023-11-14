@@ -286,12 +286,12 @@ const MakeDesignPage = () => {
             >
               쿠키 그림
             </S.MenuTabItem>
-            <S.MenuTabItem
+            {/* <S.MenuTabItem
               selected={2 === activeTab.menu}
               onClick={() => handleMenuTabChange('menu', 2)}
             >
               그림 색상
-            </S.MenuTabItem>
+            </S.MenuTabItem> */}
           </S.MenuTab>
           <S.DrawingTab
             style={{

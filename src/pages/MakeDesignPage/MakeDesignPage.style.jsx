@@ -108,7 +108,7 @@ export const MenuTab = styled.div`
 
 export const MenuTabItem = styled.div`
   border-radius: 20px;
-  width: 188px;
+  width: 302px;
   height: 64px;
 
   background-color: rgba(255, 255, 255, 0.6);
@@ -137,7 +137,7 @@ export const MenuTabItem = styled.div`
     left: 0px;
     bottom: -42px;
 
-    width: 188px;
+    width: 302px;
     height: 60px;
 
     background-color: white;
