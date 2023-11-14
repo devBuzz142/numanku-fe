@@ -4,13 +4,13 @@ import * as S from './ViewWritePage.style';
 import Button from '../../components/Button/Button';
 import Icon from '../../components/Icon/Icon';
 import Input from '../../components/Input/Input';
-import kuki1 from '../../assets/kuki1.svg'
-import Header from '../../components/Header/Header'
+import kuki1 from '../../assets/kuki1.svg';
+import Header from '../../components/Header/Header';
 import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 
 const ViewWritePage = () => {
   const navigate = useNavigate();
-  
+
   const [kukiContents, setKukiContents] = useState('');
 
   const handleKukiContentsChange = (event) => {
@@ -58,23 +58,19 @@ const ViewWritePage = () => {
       <S.CheckBoxContainer>
         <S.AnonymousWrapper>
           <Icon name="CHECKBOX" width={35} height={35} />
-          <S.CheckBoxTextWrapper>
-            익명
-          </S.CheckBoxTextWrapper>
+          <S.CheckBoxTextWrapper>익명</S.CheckBoxTextWrapper>
         </S.AnonymousWrapper>
         <Icon name="DIVIDE_LINE" width={5} height={45} />
         <S.PrivateWrapper>
           <Icon name="CHECKBOX" width={35} height={35} />
-          <S.CheckBoxTextWrapper>
-            비공개
-          </S.CheckBoxTextWrapper>
+          <S.CheckBoxTextWrapper>비공개</S.CheckBoxTextWrapper>
         </S.PrivateWrapper>
       </S.CheckBoxContainer>
       <S.ButtonWrapper>
-          <Button type="button" onClick={() => navigate('/view/complete')}>
+        <Button type="button" onClick={() => navigate('/view/complete')}>
           선물하기
-          </Button>
-        </S.ButtonWrapper>
+        </Button>
+      </S.ButtonWrapper>
     </S.ViewWritePageContainer>
   );
 };

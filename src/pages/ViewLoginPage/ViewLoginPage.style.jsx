@@ -8,7 +8,7 @@ export const ViewLoginPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #FEF8E6;
+  background-color: #fef8e6;
 `;
 
 export const HeaderContainer = styled.div`

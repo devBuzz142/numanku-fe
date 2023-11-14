@@ -80,7 +80,7 @@ const MakeInfoPage = () => {
           />
         </S.Form>
         <S.ButtonWrapper>
-          <Button type="button" onClick={() => navigate('/make/type')}>
+          <Button type="button" onClick={() => navigate('/make/design')}>
             쿠키 꾸미기
           </Button>
         </S.ButtonWrapper>
