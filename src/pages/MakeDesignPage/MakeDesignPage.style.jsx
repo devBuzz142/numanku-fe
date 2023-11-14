@@ -15,6 +15,8 @@ export const MakeDesignPage = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
+  touch-action: none;
 `;
 
 export const CanvasWrapper = styled.div`

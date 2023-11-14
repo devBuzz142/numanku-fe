@@ -5,7 +5,4 @@ export const PageTemplateContainer = styled.div`
   height: 1624px;
 
   background-color: #f6eddd;
-
-  // stop scrolling by mobile touch
-  touch-action: pinch-zoom;
 `;
