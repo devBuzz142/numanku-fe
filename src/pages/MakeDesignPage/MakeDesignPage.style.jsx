@@ -170,5 +170,5 @@ export const CollorPalleteWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 `;

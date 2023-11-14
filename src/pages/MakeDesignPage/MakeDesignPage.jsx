@@ -5,7 +5,6 @@ import ColorPalette, {
   useColorPalette,
 } from '../../components/ColorPalette/ColorPalette';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import KUKI1 from '../../assets/kuki1.svg';
 
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
@@ -20,9 +19,13 @@ const MakeDesignPage = () => {
   const canvasOutterRef0 = useRef(null);
   const canvasOutterRef1 = useRef(null);
   const canvasOutterRef2 = useRef(null);
+  const canvasInnerRef0 = useRef(null);
+  const canvasInnerRef1 = useRef(null);
+  const canvasInnerRef2 = useRef(null);
   const canvasRef = useMemo(
     () => ({
       outter: [canvasOutterRef0, canvasOutterRef1, canvasOutterRef2],
+      inner: [canvasInnerRef0, canvasInnerRef1, canvasInnerRef2],
     }),
     [],
   );
@@ -30,7 +33,7 @@ const MakeDesignPage = () => {
   const [canvasCtx, setCanvasCtx] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
 
-  const [drawingImg, setDraingImg] = useState({
+  const [drawingImg, setDrawingImg] = useState({
     outter: [null, null, null],
     inner: [null, null, null],
     innerColor: [null, null, null],
@@ -38,7 +41,8 @@ const MakeDesignPage = () => {
 
   useEffect(() => {
     const initCtx = () => {
-      const canvas = canvasRef.outter[activeTab.outter].current;
+      const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
+      const canvas = canvasRef[activeMenu][activeTab[activeMenu]].current;
       const ctx = canvas.getContext('2d');
       setCanvasCtx(ctx);
     };
@@ -50,7 +54,7 @@ const MakeDesignPage = () => {
     };
   }, [canvasRef, activeTab.menu, activeTab.outter, activeTab.inner]);
 
-  const hanleMenuTabChange = (name, index) => {
+  const handleMenuTabChange = (name, index) => {
     setActiveTab({
       ...activeTab,
       [name]: index,
@@ -75,11 +79,13 @@ const MakeDesignPage = () => {
 
   const handleDrawStop = () => {
     setIsDrawing(false);
-    setDraingImg({
+    const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
+
+    setDrawingImg({
       ...drawingImg,
-      outter: drawingImg.outter.map((img, idx) =>
-        idx === activeTab.outter
-          ? canvasRef.outter[activeTab.outter].current.toDataURL()
+      [activeMenu]: drawingImg[activeMenu].map((img, idx) =>
+        idx === activeTab[activeMenu]
+          ? canvasRef[activeMenu][activeTab[activeMenu]].current.toDataURL()
           : img,
       ),
     });
@@ -91,9 +97,10 @@ const MakeDesignPage = () => {
       <S.CanvasWrapper>
         <canvas
           style={{
-            display: activeTab.outter === 0 ? 'block' : 'none',
+            display:
+              activeTab.menu === 0 && activeTab.outter === 0 ? 'block' : 'none',
           }}
-          id="canvas0"
+          id="canvas-outter-0"
           width="680"
           height="680"
           ref={canvasOutterRef0}
@@ -103,9 +110,10 @@ const MakeDesignPage = () => {
         />
         <canvas
           style={{
-            display: activeTab.outter === 1 ? 'block' : 'none',
+            display:
+              activeTab.menu === 0 && activeTab.outter === 1 ? 'block' : 'none',
           }}
-          id="canvas1"
+          id="canvas-outter-1"
           width="680"
           height="680"
           ref={canvasOutterRef1}
@@ -115,12 +123,52 @@ const MakeDesignPage = () => {
         />
         <canvas
           style={{
-            display: activeTab.outter === 2 ? 'block' : 'none',
+            display:
+              activeTab.menu === 0 && activeTab.outter === 2 ? 'block' : 'none',
           }}
-          id="canvas2"
+          id="canvas-outter-2"
           width="680"
           height="680"
           ref={canvasOutterRef2}
+          onMouseDown={() => setIsDrawing(true)}
+          onMouseUp={() => handleDrawStop()}
+          onMouseMove={draw}
+        />
+        <canvas
+          style={{
+            display:
+              activeTab.menu === 1 && activeTab.inner === 0 ? 'block' : 'none',
+          }}
+          id="canvas-inner-0"
+          width="680"
+          height="680"
+          ref={canvasInnerRef0}
+          onMouseDown={() => setIsDrawing(true)}
+          onMouseUp={() => handleDrawStop()}
+          onMouseMove={draw}
+        />
+        <canvas
+          style={{
+            display:
+              activeTab.menu === 1 && activeTab.inner === 1 ? 'block' : 'none',
+          }}
+          id="canvas-inner-1"
+          width="680"
+          height="680"
+          ref={canvasInnerRef1}
+          onMouseDown={() => setIsDrawing(true)}
+          onMouseUp={() => handleDrawStop()}
+          onMouseMove={draw}
+        />
+        <canvas
+          style={{
+            display:
+              activeTab.menu === 1 && activeTab.inner === 2 ? 'block' : 'none',
+          }}
+          id="canvas-inner-2"
+          width="680"
+          height="680"
+          ref={canvasInnerRef2}
           onMouseDown={() => setIsDrawing(true)}
           onMouseUp={() => handleDrawStop()}
           onMouseMove={draw}
@@ -145,19 +193,19 @@ const MakeDesignPage = () => {
           <S.MenuTab>
             <S.MenuTabItem
               selected={0 === activeTab.menu}
-              onClick={() => hanleMenuTabChange('menu', 0)}
+              onClick={() => handleMenuTabChange('menu', 0)}
             >
               쿠키 모양
             </S.MenuTabItem>
             <S.MenuTabItem
               selected={1 === activeTab.menu}
-              onClick={() => hanleMenuTabChange('menu', 1)}
+              onClick={() => handleMenuTabChange('menu', 1)}
             >
               쿠키 그림
             </S.MenuTabItem>
             <S.MenuTabItem
               selected={2 === activeTab.menu}
-              onClick={() => hanleMenuTabChange('menu', 2)}
+              onClick={() => handleMenuTabChange('menu', 2)}
             >
               그림 색상
             </S.MenuTabItem>
@@ -165,21 +213,41 @@ const MakeDesignPage = () => {
           <S.DrawingTab>
             <S.DrawingTabItem
               selected={0 === activeTab.outter}
-              onClick={() => hanleMenuTabChange('outter', 0)}
+              onClick={() => handleMenuTabChange('outter', 0)}
             >
-              <img src={drawingImg.outter[0]} alt="쿠키1" />
+              <img src={drawingImg.outter[0]} alt="쿠키모양1" />
             </S.DrawingTabItem>
             <S.DrawingTabItem
               selected={1 === activeTab.outter}
-              onClick={() => hanleMenuTabChange('outter', 1)}
+              onClick={() => handleMenuTabChange('outter', 1)}
             >
-              <img src={drawingImg.outter[1]} alt="쿠키2" />
+              <img src={drawingImg.outter[1]} alt="쿠키모양2" />
             </S.DrawingTabItem>
             <S.DrawingTabItem
               selected={2 === activeTab.outter}
-              onClick={() => hanleMenuTabChange('outter', 2)}
+              onClick={() => handleMenuTabChange('outter', 2)}
             >
-              <img src={drawingImg.outter[2]} alt="쿠키3" />
+              <img src={drawingImg.outter[2]} alt="쿠키모양3" />
+            </S.DrawingTabItem>
+          </S.DrawingTab>
+          <S.DrawingTab>
+            <S.DrawingTabItem
+              selected={0 === activeTab.inner}
+              onClick={() => handleMenuTabChange('inner', 0)}
+            >
+              <img src={drawingImg.inner[0]} alt="쿠키그림1" />
+            </S.DrawingTabItem>
+            <S.DrawingTabItem
+              selected={1 === activeTab.inner}
+              onClick={() => handleMenuTabChange('inner', 1)}
+            >
+              <img src={drawingImg.inner[1]} alt="쿠키그림2" />
+            </S.DrawingTabItem>
+            <S.DrawingTabItem
+              selected={2 === activeTab.inner}
+              onClick={() => handleMenuTabChange('inner', 2)}
+            >
+              <img src={drawingImg.inner[2]} alt="쿠키그림3" />
             </S.DrawingTabItem>
           </S.DrawingTab>
           <S.CollorPalleteWrapper>
