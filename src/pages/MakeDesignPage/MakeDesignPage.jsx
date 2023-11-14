@@ -6,6 +6,17 @@ import ColorPalette, {
 } from '../../components/ColorPalette/ColorPalette';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+const COLORS = [
+  [0, 0, 0], // black
+  [255, 0, 0], // red
+  [255, 165, 0], // orange
+  [255, 255, 0], // yellow
+  [0, 128, 0], // green
+  [0, 0, 255], // blue
+  [165, 42, 42], // brown
+  [128, 0, 128], // purple
+];
+
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
   const [activePen, setActivePen] = useState(0);
@@ -55,6 +66,13 @@ const MakeDesignPage = () => {
       setCanvasCtx(null);
     };
   }, [canvasRef, activeTab.menu, activeTab.outter, activeTab.inner]);
+
+  useEffect(() => {
+    if (!canvasCtx) return;
+
+    canvasCtx.strokeStyle = `rgba(${COLORS[activeColor].join(',')}, 0.85)`; // 색상
+    console.log(canvasCtx.strokeStyle);
+  }, [canvasCtx, activeColor]);
 
   const handleMenuTabChange = (name, index) => {
     setActiveTab({
