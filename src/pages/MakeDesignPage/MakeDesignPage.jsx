@@ -107,7 +107,10 @@ const MakeDesignPage = () => {
   return (
     <S.MakeDesignPage>
       <Header>자유롭게 그려주세요!</Header>
-      <S.CanvasWrapper>
+      <S.CanvasWrapper
+        activeMenu={activeTab.menu}
+        outterImg={drawingImg.outter[0]}
+      >
         <canvas
           style={{
             display:

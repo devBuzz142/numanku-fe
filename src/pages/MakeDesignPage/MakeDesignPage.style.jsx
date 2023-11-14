@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import kuki1 from '../../assets/kuki1.svg';
 
 export const MakeDesignPage = styled.div`
   top: 44px;
@@ -27,13 +28,16 @@ export const CanvasWrapper = styled.div`
   ::before {
     content: '';
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: -2px;
+    left: -2px;
 
     width: 680px;
     height: 680px;
 
-    background-color: white;
+    background-image: ${({ activeMenu, outterImg }) =>
+      activeMenu !== 0 && `url(${outterImg})`};
+    background-size: cover;
+    background-position: center;
     opacity: 0.5;
   }
 `;
