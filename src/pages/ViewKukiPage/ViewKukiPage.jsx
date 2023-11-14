@@ -5,12 +5,15 @@ import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 import Badge from '../../components/Badge/Badge';
 
 import TEMP_KUKI from '../../assets/kuki1.svg';
+import { useNavigate } from 'react-router-dom';
 
 const ViewKukiPage = () => {
+  const navigate = useNavigate();
+
   return (
     <S.ViewKukiPage>
       <S.HeaderContainer>
-        <S.BackIconWrapper>
+        <S.BackIconWrapper onClick={() => navigate('/view')}>
           <Icon name="BACK_FILL" />
         </S.BackIconWrapper>
         <Header fontSize={48}>작성자 이름</Header>

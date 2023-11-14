@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/view" element={<ViewMainPage />} />
         <Route path="/view/login" element={<ViewLoginPage />} />
-        <Route path="/view/kuki" element={<ViewKukiPage />} />
+        <Route path="/view/kuki/*" element={<ViewKukiPage />} />
         <Route path="/view/design" element={<ViewDesignPage />} />
         <Route path="/view/write" element={<ViewWritePage />} />
         <Route path="/view/complete" element={<ViewCompletePage />} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
-        <Route path="/make/type" element={<MakeKukiTypePage />} />
+        {/* <Route path="/make/type" element={<MakeKukiTypePage />} /> */}
         <Route path="/make/design" element={<MakeDesignPage />} />
         <Route path="/make/complete" element={<MakeCompletePage />} />
       </Routes>

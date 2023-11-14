@@ -30,12 +30,12 @@ const ViewDesignPage = () => {
       ...kuki,
       [id]: value,
     });
-  }
+  };
 
   const handleSubmitClick = () => {
     navigate('/view/write');
-  }
-  
+  };
+
   return (
     <Container>
       <h1>ViewDesignPage</h1>
