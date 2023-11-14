@@ -28,6 +28,7 @@ export const Input = styled.input`
   background-color: ${(props) => props.backgroundColor};
 
   padding: 5px;
+  text-indent: 12px;
 
   font-size: 24px;
 `;
@@ -72,4 +73,6 @@ export const Textarea = styled.textarea`
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-line;
+
+  text-indent: 12px;
 `;
