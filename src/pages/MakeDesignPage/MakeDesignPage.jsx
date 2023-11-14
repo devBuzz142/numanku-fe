@@ -63,16 +63,41 @@ const MakeDesignPage = () => {
     });
   };
 
-  const draw = (e) => {
-    // mouse position
-    const mouseX = e.nativeEvent.offsetX;
-    const mouseY = e.nativeEvent.offsetY;
+  // const drawMouse = (e) => {
+  //   // mouse position
+  //   const mouseX = e.nativeEvent.offsetX;
+  //   const mouseY = e.nativeEvent.offsetY;
+  //   // drawing
+  //   if (!isDrawing) {
+  //     canvasCtx.beginPath();
+  //     canvasCtx.moveTo(mouseX, mouseY);
+  //   } else {
+  //     canvasCtx.lineTo(mouseX, mouseY);
+  //     canvasCtx.stroke();
+  //   }
+  // };
+
+  const drawTouch = (e) => {
+    if (!isDrawing) return;
+
+    // touch position
+    const mouseX = e.touches[0].clientX;
+    const mouseY = e.touches[0].clientY;
+
+    const rect = e.target.getBoundingClientRect();
+    const x = Math.round(
+      ((mouseX - rect.left) / (rect.right - rect.left)) * e.target.width,
+    );
+    const y = Math.round(
+      ((mouseY - rect.top) / (rect.bottom - rect.top)) * e.target.height,
+    );
+
     // drawing
     if (!isDrawing) {
       canvasCtx.beginPath();
-      canvasCtx.moveTo(mouseX, mouseY);
+      canvasCtx.moveTo(x, y);
     } else {
-      canvasCtx.lineTo(mouseX, mouseY);
+      canvasCtx.lineTo(x, y);
       canvasCtx.stroke();
     }
   };
@@ -94,6 +119,9 @@ const MakeDesignPage = () => {
 
   const handleDrawStop = () => {
     setIsDrawing(false);
+
+    canvasCtx.beginPath();
+
     const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
 
     setDrawingImg({
@@ -125,9 +153,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasOutterRef0}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
         <canvas
           style={{
@@ -138,9 +166,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasOutterRef1}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
         <canvas
           style={{
@@ -151,9 +179,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasOutterRef2}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
         <canvas
           style={{
@@ -164,9 +192,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasInnerRef0}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
         <canvas
           style={{
@@ -177,9 +205,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasInnerRef1}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
         <canvas
           style={{
@@ -190,9 +218,9 @@ const MakeDesignPage = () => {
           width="680"
           height="680"
           ref={canvasInnerRef2}
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => handleDrawStop()}
-          onMouseMove={draw}
+          onTouchStart={() => setIsDrawing(true)}
+          onTouchEnd={() => handleDrawStop()}
+          onTouchMove={drawTouch}
         />
       </S.CanvasWrapper>
       <S.ControllerContainer>
@@ -275,7 +303,7 @@ const MakeDesignPage = () => {
             />
           </S.CollorPalleteWrapper>
           <S.ButtonWrapper>
-            <Button width={660}>포장하기</Button>
+            <Button width={660}>오븐에 넣기</Button>
           </S.ButtonWrapper>
         </S.Controller>
       </S.ControllerContainer>
