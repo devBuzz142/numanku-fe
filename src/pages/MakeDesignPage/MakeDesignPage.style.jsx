@@ -55,7 +55,7 @@ export const Tool = styled.div`
   width: 88px;
   height: 88px;
 
-  border: ${({ selected }) => (selected ? '8px solid black' : 'none')};
+  border: none;
   border-radius: 50%;
 
   background-color: white;

@@ -8,7 +8,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MakeDesignPage = () => {
   const [activeColor, handleColorChange] = useColorPalette();
-  const [activeTool, setActiveTool] = useState(0); // 0: pen, 1: eraser
+  // const [activeTool, setActiveTool] = useState(0); // 0: pen, 1: eraser
   const [activeTab, setActiveTab] = useState({
     menu: 0,
     outter: 0,
@@ -61,8 +61,6 @@ const MakeDesignPage = () => {
     });
   };
 
-  const handleToolChange = (index) => setActiveTool(index);
-
   const draw = (e) => {
     // mouse position
     const mouseX = e.nativeEvent.offsetX;
@@ -75,6 +73,21 @@ const MakeDesignPage = () => {
       canvasCtx.lineTo(mouseX, mouseY);
       canvasCtx.stroke();
     }
+  };
+
+  const erase = () => {
+    canvasCtx.clearRect(0, 0, 680, 680);
+
+    const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
+
+    setDrawingImg({
+      ...drawingImg,
+      [activeMenu]: drawingImg[activeMenu].map((img, idx) =>
+        idx === activeTab[activeMenu]
+          ? canvasRef[activeMenu][activeTab[activeMenu]].current.toDataURL()
+          : img,
+      ),
+    });
   };
 
   const handleDrawStop = () => {
@@ -176,18 +189,7 @@ const MakeDesignPage = () => {
       </S.CanvasWrapper>
       <S.ControllerContainer>
         <S.ToolWrapper>
-          <S.Tool
-            selected={0 === activeTool}
-            onClick={() => handleToolChange(0)}
-          >
-            펜
-          </S.Tool>
-          <S.Tool
-            selected={1 === activeTool}
-            onClick={() => handleToolChange(1)}
-          >
-            지우개
-          </S.Tool>
+          <S.Tool onClick={() => erase()}>지우기</S.Tool>
         </S.ToolWrapper>
         <S.Controller>
           <S.MenuTab>
@@ -210,7 +212,11 @@ const MakeDesignPage = () => {
               그림 색상
             </S.MenuTabItem>
           </S.MenuTab>
-          <S.DrawingTab>
+          <S.DrawingTab
+            style={{
+              display: activeTab.menu === 0 ? 'flex' : 'none',
+            }}
+          >
             <S.DrawingTabItem
               selected={0 === activeTab.outter}
               onClick={() => handleMenuTabChange('outter', 0)}
@@ -230,7 +236,11 @@ const MakeDesignPage = () => {
               <img src={drawingImg.outter[2]} alt="쿠키모양3" />
             </S.DrawingTabItem>
           </S.DrawingTab>
-          <S.DrawingTab>
+          <S.DrawingTab
+            style={{
+              display: activeTab.menu === 1 ? 'flex' : 'none',
+            }}
+          >
             <S.DrawingTabItem
               selected={0 === activeTab.inner}
               onClick={() => handleMenuTabChange('inner', 0)}
