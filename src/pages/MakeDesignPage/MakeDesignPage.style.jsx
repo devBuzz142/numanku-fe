@@ -23,6 +23,19 @@ export const CanvasWrapper = styled.div`
 
   border-radius: 30px;
   border: 5px solid #4e413b;
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 680px;
+    height: 680px;
+
+    background-color: white;
+    opacity: 0.5;
+  }
 `;
 
 export const ControllerContainer = styled.div`
