@@ -20,7 +20,7 @@ const ViewMainPage = () => {
         </S.InfoButton>
       </S.InfoButtonWrapper>
       <S.PlusButtonWrapper>
-        <S.PlusButton onClick={() => navigate('/view/write')}>
+        <S.PlusButton onClick={() => navigate('/view/design')}>
           <Icon name="ADD_FILL" width="80px" height="80px" />
         </S.PlusButton>
       </S.PlusButtonWrapper>
