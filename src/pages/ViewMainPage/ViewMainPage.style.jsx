@@ -19,6 +19,27 @@ export const ViewMainPage = styled.div`
   }
 `;
 
+export const InfoButtonWrapper = styled.div`
+  position: absolute;
+
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+export const InfoButton = styled.button`
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 6px solid #bc5148;
+
+  background-color: #f6eddd;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const PlusButtonWrapper = styled.div`
   position: absolute;
 

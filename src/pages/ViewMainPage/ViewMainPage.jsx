@@ -8,6 +8,11 @@ const ViewMainPage = () => {
 
   return (
     <S.ViewMainPage image={TEMP_POSTER}>
+      <S.InfoButtonWrapper>
+        <S.InfoButton onClick={() => navigate('/view/info')}>
+          <Icon name="HELP_CIRCLE" width="80px" height="80px" />
+        </S.InfoButton>
+      </S.InfoButtonWrapper>
       <S.PlusButtonWrapper>
         <S.PlusButton onClick={() => navigate('/view/write')}>
           <Icon name="ADD_FILL" width="80px" height="80px" />
