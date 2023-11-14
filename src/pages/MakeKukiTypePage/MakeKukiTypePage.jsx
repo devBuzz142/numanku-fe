@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
 import * as S from './MakeKukiTypePage.style';
 
 const MakeKukiTypePage = () => {
+  const navigate = useNavigate();
+
   return (
     <S.MakeKukiTypePage>
       <S.HeaderContainer>
@@ -16,7 +19,7 @@ const MakeKukiTypePage = () => {
       </S.HeaderContainer>
       <S.MainContainer>
         <Button>템플릿 사용하기</Button>
-        <Button>직접 만들기</Button>
+        <Button onClick={() => navigate('/make/design')}>직접 만들기</Button>
       </S.MainContainer>
     </S.MakeKukiTypePage>
   );
