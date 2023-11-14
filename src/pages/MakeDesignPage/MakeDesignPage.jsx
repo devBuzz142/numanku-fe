@@ -44,6 +44,8 @@ const MakeDesignPage = () => {
       const activeMenu = activeTab.menu === 0 ? 'outter' : 'inner';
       const canvas = canvasRef[activeMenu][activeTab[activeMenu]].current;
       const ctx = canvas.getContext('2d');
+      ctx.lineWidth = 6;
+
       setCanvasCtx(ctx);
     };
 
@@ -108,8 +110,11 @@ const MakeDesignPage = () => {
     <S.MakeDesignPage>
       <Header>자유롭게 그려주세요!</Header>
       <S.CanvasWrapper
-        activeMenu={activeTab.menu}
-        outterImg={drawingImg.outter[0]}
+        image={
+          drawingImg[activeTab.menu == 0 ? 'inner' : 'outter'][
+            activeTab.menu == 0 ? activeTab.inner : activeTab.outter
+          ]
+        }
       >
         <canvas
           style={{

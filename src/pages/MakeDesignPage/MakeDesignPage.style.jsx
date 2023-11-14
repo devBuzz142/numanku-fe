@@ -34,8 +34,7 @@ export const CanvasWrapper = styled.div`
     width: 680px;
     height: 680px;
 
-    background-image: ${({ activeMenu, outterImg }) =>
-      activeMenu !== 0 && `url(${outterImg})`};
+    background-image: ${({ image }) => `url(${image})`};
     background-size: cover;
     background-position: center;
     opacity: 0.5;
