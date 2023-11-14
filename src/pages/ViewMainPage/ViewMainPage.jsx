@@ -1,15 +1,21 @@
 import * as S from './ViewMainPage.style';
-import TEMP_POSTER from '../../assets/images/temp_poster2.jpeg';
 import Icon from '../../components/Icon/Icon';
+import Kuki from '../../components/Kuki/Kuki';
+
+import TEMP_POSTER from '../../assets/images/temp_poster2.jpeg';
+import { TEMP_KUKIES } from '../../commons/dummy';
+
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const ViewMainPage = () => {
   const navigate = useNavigate();
+  const [kukies, setKukies] = useState(TEMP_KUKIES);
 
   return (
     <S.ViewMainPage image={TEMP_POSTER}>
       <S.InfoButtonWrapper>
-        <S.InfoButton onClick={() => navigate('/view/info')}>
+        <S.InfoButton>
           <Icon name="HELP_CIRCLE" width="80px" height="80px" />
         </S.InfoButton>
       </S.InfoButtonWrapper>
@@ -18,6 +24,11 @@ const ViewMainPage = () => {
           <Icon name="ADD_FILL" width="80px" height="80px" />
         </S.PlusButton>
       </S.PlusButtonWrapper>
+      <S.KukiContainer>
+        {kukies.map((kuki, index) => (
+          <Kuki key={index} kuki={kuki} />
+        ))}
+      </S.KukiContainer>
     </S.ViewMainPage>
   );
 };

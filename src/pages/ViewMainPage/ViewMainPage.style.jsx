@@ -46,6 +46,8 @@ export const PlusButtonWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   bottom: 100px;
+
+  z-index: 1;
 `;
 
 export const PlusButton = styled.button`
@@ -59,4 +61,11 @@ export const PlusButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const KukiContainer = styled.div`
+  width: 100%;
+  height: calc(100% - 280px);
+
+  top: 280px;
 `;
