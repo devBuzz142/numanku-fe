@@ -75,7 +75,9 @@ export const Tool = styled.div`
     border: 6px solid black;
   `}
 
-  ${({ penWidth }) => `
+  ${({ penWidth }) =>
+    penWidth &&
+    `
   ::after {
     content: '';
     width: 40px;
