@@ -8,8 +8,6 @@ import ColorPalette, {
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import mergeImages from 'merge-images';
-
 const COLORS = [
   [0, 0, 0], // black
   [255, 0, 0], // red
@@ -172,13 +170,20 @@ const MakeDesignPage = () => {
   const handleOvenButtonClick = () => {
     navigate('/make/complete');
 
-    // mergeImages([drawingImg.outter[0], drawingImg.inner[0]]).then((b64) => {
-    //   // download
-    //   const link = document.createElement('a');
-    //   link.download = 'cookie.png';
-    //   link.href = b64;
-    //   link.click();
-    // });
+    // download
+    for (let i = 0; i < 3; i++) {
+      const link = document.createElement('a');
+      link.download = `kuki_outter_${i}.png`;
+      link.href = drawingImg.outter[i];
+      link.click();
+    }
+
+    for (let i = 0; i < 3; i++) {
+      const link = document.createElement('a');
+      link.download = `kuki_outter_${i}.png`;
+      link.href = drawingImg.inner[i];
+      link.click();
+    }
   };
 
   return (

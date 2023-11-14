@@ -13,18 +13,19 @@ export const ViewMainPage = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(${(props) => props.image});
-    background-size: cover;
     background-position: center;
     opacity: 0.8;
   }
 `;
 
 export const InfoButtonWrapper = styled.div`
-  position: absolute;
+  position: fixed;
 
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
+
+  z-index: 1;
 `;
 
 export const InfoButton = styled.button`
@@ -41,7 +42,7 @@ export const InfoButton = styled.button`
 `;
 
 export const PlusButtonWrapper = styled.div`
-  position: absolute;
+  position: fixed;
 
   left: 50%;
   transform: translateX(-50%);
@@ -68,4 +69,6 @@ export const KukiContainer = styled.div`
   height: calc(100% - 280px);
 
   top: 280px;
+
+  overflow: scroll;
 `;

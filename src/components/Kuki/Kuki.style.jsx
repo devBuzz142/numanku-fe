@@ -27,4 +27,26 @@ export const KukiContainer = styled.div`
 export const KukiWrapper = styled.div`
   width: ${({ likeCount }) => 90 + Math.min(50, likeCount * 10)}px;
   height: ${({ likeCount }) => 90 + Math.min(50, likeCount * 10)}px;
+
+  ::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(${(props) => props.outter});
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+  }
+
+  ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(${(props) => props.inner});
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+  }
 `;
