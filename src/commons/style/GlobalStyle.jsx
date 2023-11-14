@@ -19,8 +19,6 @@ const GlobalStyle = () => {
           padding: 0;
           border: none;
 
-          outline: 1px solid red;
-
           font-family: 'EF_jejudoldam', sans-serif;
         }
 

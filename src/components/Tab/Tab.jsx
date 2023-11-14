@@ -1,36 +1,11 @@
-import { useState } from 'react';
-import TabItem from './TabItem';
-import styled from '@emotion/styled';
+import * as S from './Tab.style';
 
-const Container = styled.div`
-  display: flex;
-`;
-
-export const useTab = () => {
-  const [selected, setSelected] = useState(0);
-
-  return [selected, setSelected];
+export const TabItem = () => {
+  return <S.TabItem>TabItem</S.TabItem>;
 };
 
-const Tab = ({ items = [''], selected, setSelected }) => {
-  const handleTabItemClick = (index) => setSelected(index);
-
-  console.log(selected);
-
-  return (
-    <Container>
-      {items.map((item, index) => (
-        <TabItem
-          key={`tab-${index}`}
-          index={index}
-          selected={index === selected}
-          handleTabItemClick={handleTabItemClick}
-        >
-          {item}
-        </TabItem>
-      ))}
-    </Container>
-  );
+const Tab = ({ chilren }) => {
+  return <S.Tab>{chilren}</S.Tab>;
 };
 
 export default Tab;
