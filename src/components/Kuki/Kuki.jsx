@@ -15,7 +15,7 @@ const Kuki = ({ kuki }) => {
         likeCount={kuki.likeCount}
         outter={KUKI_IMAGES.outter[kuki.outterImage]}
         inner={KUKI_IMAGES.inner[kuki.innerImage]}
-      ></S.KukiWrapper>
+      />
     </S.KukiContainer>
   );
 };

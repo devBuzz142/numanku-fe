@@ -13,7 +13,8 @@ export const ViewMainPage = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(${(props) => props.image});
-    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-y;
     opacity: 0.8;
   }
 `;
@@ -66,7 +67,8 @@ export const PlusButton = styled.button`
 
 export const KukiContainer = styled.div`
   width: 100%;
-  height: calc(100% - 280px);
+  height: 100%;
+  /* height: calc(100% - 280px); */
 
   top: 280px;
 

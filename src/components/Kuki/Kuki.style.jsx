@@ -25,8 +25,8 @@ export const KukiContainer = styled.div`
 `;
 
 export const KukiWrapper = styled.div`
-  width: ${({ likeCount }) => 90 + Math.min(50, likeCount * 10)}px;
-  height: ${({ likeCount }) => 90 + Math.min(50, likeCount * 10)}px;
+  width: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
+  height: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
 
   ::before {
     content: '';

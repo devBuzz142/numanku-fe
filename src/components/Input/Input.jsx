@@ -45,8 +45,9 @@ const Input = ({
           type={type}
           id={id}
           placeholder={placeholder}
-          onChange={props.onChange}
           width={props.width}
+          height={props.height}
+          onChange={props.onChange}
           backgroundColor={backgroundColor}
           noBorder={noBorder}
         />

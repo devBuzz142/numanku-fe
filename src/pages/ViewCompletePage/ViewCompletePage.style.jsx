@@ -29,9 +29,6 @@ export const KukiContainer = styled.div`
   max-height: 600px;
   min-height: 520px;
 
-  background-image: ${({ image }) => `url(${image})`};
-  background-size: contain;
-
   display: flex;
   justify-content: center;
 `;
