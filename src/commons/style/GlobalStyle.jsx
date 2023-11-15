@@ -20,6 +20,10 @@ const GlobalStyle = () => {
           border: none;
 
           font-family: 'EF_jejudoldam', sans-serif;
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
         }
 
         *,

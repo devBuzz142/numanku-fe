@@ -4,7 +4,9 @@ import ICON_BACK_FILL from '../../assets/icons/back_fill.svg';
 import ICON_CHECKBOX from '../../assets/icons/check_box.svg';
 import ICON_DIVIDE_LINE from '../../assets/icons/divide_line.svg';
 import ICON_HEART_LINE from '../../assets/icons/heart_line.svg';
+import ICON_HEART_FILL from '../../assets/icons/heart_fill.svg.png';
 import ICON_ADD_FILL from '../../assets/icons/add_fill.svg';
+import ICON_LOCK_FILL from '../../assets/icons/lock_fill.svg';
 
 const Icon = ({ name, ...props }) => {
   switch (name) {
@@ -20,8 +22,12 @@ const Icon = ({ name, ...props }) => {
       return <img src={ICON_DIVIDE_LINE} alt="divide_line" {...props} />;
     case 'HEART_LINE':
       return <img src={ICON_HEART_LINE} alt="heart_line" {...props} />;
+    case 'HEART_FILL':
+      return <img src={ICON_HEART_FILL} alt="heart_fill" {...props} />;
     case 'ADD_FILL':
       return <img src={ICON_ADD_FILL} alt="add_fill" {...props} />;
+    case 'LOCK_FILL':
+      return <img src={ICON_LOCK_FILL} alt="lock_fill" {...props} />;
     default:
       return null;
   }

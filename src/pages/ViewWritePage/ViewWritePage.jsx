@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as S from './ViewWritePage.style';
 import Button from '../../components/Button/Button';
 import Icon from '../../components/Icon/Icon';
 import Input from '../../components/Input/Input';
-import kuki1 from '../../assets/kuki1.svg';
 import Header from '../../components/Header/Header';
 import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { KUKI_IMAGES } from '../../commons/dummy';
 
 const ViewWritePage = () => {
   const navigate = useNavigate();
@@ -30,39 +32,45 @@ const ViewWritePage = () => {
   return (
     <S.ViewWritePageContainer>
       <S.TopContainer>
-        <S.UndoWrapper>
+        <S.UndoWrapper onClick={() => navigate('/view')}>
           <Icon name="BACK_FILL" width={45} height={45} />
         </S.UndoWrapper>
         <S.NameWrapper>
-          <Header fontSize={48}>이름</Header>
+          <Header fontSize={48}>{isAnonymous ? '익명' : '이름'}</Header>
         </S.NameWrapper>
       </S.TopContainer>
       <S.KukiContainer>
-        <img src={kuki1} alt="kuki1" width="450px" height="450px"></img>
+        <S.Kuki outter={KUKI_IMAGES.outter[0]} inner={KUKI_IMAGES.inner[0]} />
+        <S.LockBadgeWrapper lock={isPrivate}>
+          <Icon name="LOCK_FILL" width={100} height={100} />
+        </S.LockBadgeWrapper>
       </S.KukiContainer>
       <S.KukiContentsContainer>
-        <SpeechBubble>
-          <S.textarea>
-            <Input
-              width={600}
-              label="방명록내용"
-              type="textarea"
-              id="kukiContents"
-              onChange={handleKukiContentsChange}
-              backgroundColor={'#D9D9D9'}
-              noBorder
-            />
-          </S.textarea>
-        </SpeechBubble>
+        <S.SpeechBubbleWrapper>
+          <SpeechBubble>
+            <S.TextareaWrapper>
+              <Input
+                width={580}
+                height={560}
+                label="방명록내용"
+                type="textarea"
+                id="kukiContents"
+                onChange={handleKukiContentsChange}
+                backgroundColor={'#D9D9D9'}
+                noBorder
+              />
+            </S.TextareaWrapper>
+          </SpeechBubble>
+        </S.SpeechBubbleWrapper>
       </S.KukiContentsContainer>
       <S.CheckBoxContainer>
-        <S.AnonymousWrapper>
-          <Icon name="CHECKBOX" width={35} height={35} />
+        <S.AnonymousWrapper onClick={toggleAnonymous}>
+          <S.CheckBox checked={isAnonymous} />
           <S.CheckBoxTextWrapper>익명</S.CheckBoxTextWrapper>
         </S.AnonymousWrapper>
         <Icon name="DIVIDE_LINE" width={5} height={45} />
-        <S.PrivateWrapper>
-          <Icon name="CHECKBOX" width={35} height={35} />
+        <S.PrivateWrapper onClick={togglePrivate}>
+          <S.CheckBox checked={isPrivate} />
           <S.CheckBoxTextWrapper>비공개</S.CheckBoxTextWrapper>
         </S.PrivateWrapper>
       </S.CheckBoxContainer>
