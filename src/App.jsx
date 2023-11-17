@@ -16,10 +16,22 @@ import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
 import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
 import { useChannelContext } from './contexts/ChannelProvider';
+import { useAuthContext } from './contexts/AuthProvider';
 
 function App() {
   // channel context
   const { channelState } = useChannelContext();
+  const { authState } = useAuthContext();
+
+  if (!authState.userId) {
+    return (
+      <PageTemplate>
+        <Routes>
+          <Route path="/*" element={<ViewLoginPage />} />
+        </Routes>
+      </PageTemplate>
+    );
+  }
 
   return (
     <PageTemplate>
