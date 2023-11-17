@@ -15,18 +15,8 @@ import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
 import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
-import { useEffect } from 'react';
 
 function App() {
-  useEffect(() => {
-    const getKuki = async () => {
-      const res = await fetch('https://port-0-numanku-be-7lk2blonuqoil.sel5.cloudtype.app/api/channel');
-      const data = await res.json();
-      console.log(data);
-    };
-    getKuki();
-  }, []);
-
   return (
     <PageTemplate>
       <Routes>
