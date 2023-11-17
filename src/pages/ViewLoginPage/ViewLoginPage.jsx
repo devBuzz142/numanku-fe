@@ -46,7 +46,6 @@ const ViewLoginPage = () => {
       return;
     }
 
-    const TEMP_MAKER_CODE = '1234';
     if (login.makerCode) {
       if (login.makerCode.length > 12) {
         alert('제작진 비밀번호는 최대 12글자까지 입력 가능합니다.');
@@ -54,7 +53,7 @@ const ViewLoginPage = () => {
         return;
       }
 
-      if (login.makerCode !== TEMP_MAKER_CODE) {
+      if (login.makerCode !== channelState.password) {
         alert('제작진 비밀번호가 일치하지 않습니다.');
 
         return;
@@ -68,7 +67,7 @@ const ViewLoginPage = () => {
       const newUser = await API.user.createUser({
         name: login.name,
         password: login.password,
-        isMaker: channelState.makerCode === login.makerCode,
+        isMaker: channelState.password === login.makerCode,
         channelId: channelState.channelId,
       });
 
