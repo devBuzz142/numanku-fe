@@ -25,13 +25,12 @@ function App() {
     <PageTemplate>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/view" element={<ViewMainPage />}>
-          <Route path="/view/login" element={<ViewLoginPage />} />
-          <Route path="/view/kuki/*" element={<ViewKukiPage />} />
-          <Route path="/view/design" element={<ViewDesignPage />} />
-          <Route path="/view/write" element={<ViewWritePage />} />
-          <Route path="/view/complete" element={<ViewCompletePage />} />
-        </Route>
+        <Route path="/view" element={<ViewMainPage />} />
+        <Route path="/view/login" element={<ViewLoginPage />} />
+        <Route path="/view/kuki/*" element={<ViewKukiPage />} />
+        <Route path="/view/design" element={<ViewDesignPage />} />
+        <Route path="/view/write" element={<ViewWritePage />} />
+        <Route path="/view/complete" element={<ViewCompletePage />} />
 
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />

@@ -13,6 +13,7 @@ const ViewMainPage = () => {
   const navigate = useNavigate();
   const [kukies, setKukies] = useState(TEMP_KUKIES);
   const { channelState } = useChannelContext();
+  alert(channelState.channelName);
 
   return (
     <S.ViewMainPage image={TEMP_POSTER}>
