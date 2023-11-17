@@ -13,14 +13,12 @@ const ViewMainPage = () => {
   const navigate = useNavigate();
   const [kukies, setKukies] = useState(TEMP_KUKIES);
   const { channelState } = useChannelContext();
-  console.log(channelState);
 
   return (
     <S.ViewMainPage image={TEMP_POSTER}>
       <S.InfoButtonWrapper>
         <S.InfoButton>
           <Icon name="HELP_CIRCLE" width="80px" height="80px" />
-          {channelState.name}
         </S.InfoButton>
       </S.InfoButtonWrapper>
       <S.PlusButtonWrapper>
