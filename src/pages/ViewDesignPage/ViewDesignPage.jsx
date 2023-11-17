@@ -10,19 +10,24 @@ import { KUKI_IMAGES } from '../../commons/dummy';
 
 const ViewDesignPage = () => {
   const navigate = useNavigate();
-  const [kuki, setKuki] = useState({
-    outterImage: 0,
-    innerImage: 0,
-  });
 
   const [activeTab, setActiveTab] = useState({
     menu: 'outter', // 'outter' | 'inner'
-    outter: 0, // 0 ~ 2
-    inner: 0, // 0 ~ 2
+    outter: Math.floor(Math.random() * 3), // 0 ~ 2
+    inner: Math.floor(Math.random() * 3), // 0 ~ 2
   });
 
   const handleTabChange = (name, value) => {
     setActiveTab({ ...activeTab, [name]: value });
+  };
+
+  const handleSubmitClick = () => {
+    navigate('/view/write', {
+      state: {
+        outter: activeTab.outter,
+        inner: activeTab.inner,
+      },
+    });
   };
 
   return (
@@ -99,7 +104,7 @@ const ViewDesignPage = () => {
             </S.DrawingWrapper>
           </S.DrawingContainer>
           <S.ButtonWrapper>
-            <Button width={626} onClick={() => navigate('/view/write')}>
+            <Button width={626} onClick={handleSubmitClick}>
               오븐에 넣기
             </Button>
           </S.ButtonWrapper>

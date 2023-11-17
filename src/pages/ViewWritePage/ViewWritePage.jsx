@@ -6,12 +6,18 @@ import Header from '../../components/Header/Header';
 import SpeechBubble from '../../components/SpeechBubble/SpeechBubble';
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
+import { API } from '../../api/';
+import { useChannelContext } from '../../contexts/ChannelProvider';
+import { useAuthContext } from '../../contexts/AuthProvider';
 import { KUKI_IMAGES } from '../../commons/dummy';
 
 const ViewWritePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { channelState } = useChannelContext();
+  const { authState } = useAuthContext();
 
   const [kukiContents, setKukiContents] = useState('');
 
@@ -27,6 +33,35 @@ const ViewWritePage = () => {
   const [isPrivate, setIsPrivate] = useState(false);
   const togglePrivate = () => {
     setIsPrivate(!isPrivate);
+  };
+
+  const handleSubmitClick = async () => {
+    if (kukiContents === '') {
+      alert('방명록 내용을 입력해주세요.');
+      return;
+    }
+
+    const { outter, inner } = location.state;
+
+    const kuki = await API.kuki.createKuki({
+      content: kukiContents,
+      channel_id: channelState.channelId,
+      writer_id: authState.userId,
+      outterImageIndex: outter,
+      innerImageIndex: inner,
+      isPrivate: isPrivate,
+      isAnonymous: isAnonymous,
+      x: 0,
+      likeCount: 0,
+    });
+
+    if (!kuki) {
+      alert('방명록 작성에 실패했습니다.');
+
+      return;
+    }
+
+    navigate('/view');
   };
 
   return (
@@ -75,7 +110,7 @@ const ViewWritePage = () => {
         </S.PrivateWrapper>
       </S.CheckBoxContainer>
       <S.ButtonWrapper>
-        <Button type="button" onClick={() => navigate('/view/complete')}>
+        <Button type="button" onClick={handleSubmitClick}>
           선물하기
         </Button>
       </S.ButtonWrapper>
