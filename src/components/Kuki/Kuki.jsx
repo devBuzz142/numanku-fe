@@ -9,6 +9,7 @@ const Kuki = ({ kuki }) => {
   return (
     <S.KukiContainer
       left={kuki.x}
+      rotate={Math.random() * 180 - 90}
       onClick={() => navigate(`/view/kuki/${kuki.id}`, { state: kuki })}
     >
       <S.KukiWrapper

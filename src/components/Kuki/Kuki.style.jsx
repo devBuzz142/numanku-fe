@@ -22,11 +22,15 @@ export const KukiContainer = styled.div`
     opacity: 0.8;
     border-radius: 30px;
   }
+
+  rotate: ${({ rotate }) => rotate}deg;
 `;
 
 export const KukiWrapper = styled.div`
-  width: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
-  height: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
+  /* width: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
+  height: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px; */
+  width: 120px;
+  height: 120px;
 
   ::before {
     content: '';
