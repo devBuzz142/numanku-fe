@@ -29,6 +29,7 @@ const TEMP_USER = {
   channelId: 1,
 };
 const createUser = async (user = TEMP_USER) => {
+  console.log(user);
   try {
     const res = await fetch(USER_API_END_POINT, {
       method: 'POST',

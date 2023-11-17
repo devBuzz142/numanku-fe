@@ -8,11 +8,14 @@ import { TEMP_KUKIES } from '../../commons/dummy';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useChannelContext } from '../../contexts/ChannelProvider';
+import { useAuthContext } from '../../contexts/AuthProvider';
 
 const ViewMainPage = () => {
   const navigate = useNavigate();
   const [kukies, setKukies] = useState(TEMP_KUKIES);
   const { channelState } = useChannelContext();
+  const { authState } = useAuthContext();
+  console.log(authState);
 
   return (
     <S.ViewMainPage image={TEMP_POSTER}>

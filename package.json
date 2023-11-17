@@ -49,5 +49,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "merge-images": "^2.0.0",
     "prettier": "^3.0.3"
-  }
+  }, 
+  "proxy": "https://port-0-numanku-be-7lk2blonuqoil.sel5.cloudtype.app/"
 }

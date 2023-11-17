@@ -1,5 +1,5 @@
 import { createContext, useReducer, useEffect, useContext } from 'react';
-import API from '../api';
+import { API } from '../api';
 
 const ChannelContext = createContext();
 export const useChannelContext = () => useContext(ChannelContext);
@@ -28,7 +28,7 @@ const channelReducer = (state, action) => {
 };
 
 const ChannelProvider = ({ children }) => {
-  const [channelState, disatch] = useReducer(
+  const [channelState, channelDispatch] = useReducer(
     channelReducer,
     initialChannelState,
   );
@@ -55,7 +55,7 @@ const ChannelProvider = ({ children }) => {
         const res = await API.channel.getChannels();
         const channel = res[0];
 
-        disatch({
+        channelDispatch({
           type: 'SET_CHANNEL',
           payload: {
             ...channel,
@@ -81,7 +81,7 @@ const ChannelProvider = ({ children }) => {
   }, []);
 
   return (
-    <ChannelContext.Provider value={{ channelState, disatch }}>
+    <ChannelContext.Provider value={{ channelState, channelDispatch }}>
       {children}
     </ChannelContext.Provider>
   );
