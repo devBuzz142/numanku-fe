@@ -11,6 +11,8 @@ import { API } from '../../api/';
 import { useChannelContext } from '../../contexts/ChannelProvider';
 import { useAuthContext } from '../../contexts/AuthProvider';
 
+import LOGO from '../../assets/images/logo2.png';
+
 const ViewLoginPage = () => {
   const navigate = useNavigate();
   const { channelState } = useChannelContext();
@@ -119,6 +121,7 @@ const ViewLoginPage = () => {
   return (
     <S.ViewLoginPageContainer>
       <S.HeaderContainer>
+        <img src={LOGO} alt="logo" width={330} />
         <S.HeaderWrapper>
           <Header>로그인</Header>
         </S.HeaderWrapper>

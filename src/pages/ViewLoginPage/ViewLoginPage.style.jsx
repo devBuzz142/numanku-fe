@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import LOGIN_PAGE from '../../assets/images/view-login-page.png';
 
 export const ViewLoginPageContainer = styled.div`
   width: 100%;
@@ -8,11 +9,11 @@ export const ViewLoginPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #fef8e6;
+  background: url(${LOGIN_PAGE}) no-repeat center;
 `;
 
 export const HeaderContainer = styled.div`
-  margin-top: 138px;
+  margin-top: 120px;
 
   display: flex;
   flex-direction: column;
@@ -20,8 +21,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  height: 192px;
-
   display: flex;
   flex-direction: column;
 `;
@@ -43,7 +42,8 @@ export const Guide = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  margin-top: 82px;
+  margin-top: 60px;
+
   border-radius: 20px;
   padding: 16px;
 
