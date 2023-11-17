@@ -38,8 +38,8 @@ export const KukiContainer = styled.div`
   ::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     background: url(${(props) => props.outter}) no-repeat center;
     background-size: contain;
   }
@@ -47,8 +47,8 @@ export const KukiContainer = styled.div`
   ::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     background: url(${(props) => props.inner}) no-repeat center;
     background-size: contain;
   }

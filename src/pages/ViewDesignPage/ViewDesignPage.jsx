@@ -68,19 +68,19 @@ const ViewDesignPage = () => {
               selected={activeTab.outter === 0}
               onClick={() => handleTabChange('outter', 0)}
             >
-              쿠키 모양1
+              <img src={KUKI_IMAGES.outter[0]} alt="쿠키 모양1" />
             </S.DrawingWrapper>
             <S.DrawingWrapper
               selected={activeTab.outter === 1}
               onClick={() => handleTabChange('outter', 1)}
             >
-              쿠키 모양2
+              <img src={KUKI_IMAGES.outter[1]} alt="쿠키 모양2" />
             </S.DrawingWrapper>
             <S.DrawingWrapper
               selected={activeTab.outter === 2}
               onClick={() => handleTabChange('outter', 2)}
             >
-              쿠키 모양3
+              <img src={KUKI_IMAGES.outter[2]} alt="쿠키 모양3" />
             </S.DrawingWrapper>
           </S.DrawingContainer>
           <S.DrawingContainer selected={activeTab.menu === 'inner'}>
@@ -88,19 +88,19 @@ const ViewDesignPage = () => {
               selected={activeTab.inner === 0}
               onClick={() => handleTabChange('inner', 0)}
             >
-              쿠키 그림1
+              <img src={KUKI_IMAGES.inner[0]} alt="쿠키 그림1" />
             </S.DrawingWrapper>
             <S.DrawingWrapper
               selected={activeTab.inner === 1}
               onClick={() => handleTabChange('inner', 1)}
             >
-              쿠키 그림2
+              <img src={KUKI_IMAGES.inner[1]} alt="쿠키 그림2" />
             </S.DrawingWrapper>
             <S.DrawingWrapper
               selected={activeTab.inner === 2}
               onClick={() => handleTabChange('inner', 2)}
             >
-              쿠키 그림3
+              <img src={KUKI_IMAGES.inner[2]} alt="쿠키 그림3" />
             </S.DrawingWrapper>
           </S.DrawingContainer>
           <S.ButtonWrapper>
