@@ -12,10 +12,21 @@ const getKuies = async () => {
   }
 };
 
-const getKukiById = async (kukiId) => {
+const getKukiById = async ({ kukiId }) => {
   try {
     const res = await fetch(KUKI_API_END_POINT + '/' + kukiId);
     const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const getKukiesByChannelId = async ({ channel_id }) => {
+  try {
+    const res = await fetch(KUKI_API_END_POINT + `/${channel_id}/kukies`);
+    const data = await res.json();
+
     return data;
   } catch (error) {
     console.error(error);
@@ -38,4 +49,4 @@ const createKuki = async (kuki) => {
   }
 };
 
-export { getKuies, getKukiById, createKuki };
+export { getKuies, getKukiById, createKuki, getKukiesByChannelId };

@@ -8,13 +8,13 @@ const Kuki = ({ kuki }) => {
 
   return (
     <S.KukiContainer
-      left={kuki.left}
+      left={kuki.x}
       onClick={() => navigate(`/view/kuki/${kuki.id}`)}
     >
       <S.KukiWrapper
         likeCount={kuki.likeCount}
-        outter={KUKI_IMAGES.outter[kuki.outterImage]}
-        inner={KUKI_IMAGES.inner[kuki.innerImage]}
+        outter={KUKI_IMAGES.outter[kuki.outterImageIndex]}
+        inner={KUKI_IMAGES.inner[kuki.innerImageIndex]}
       />
     </S.KukiContainer>
   );
