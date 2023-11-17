@@ -6,6 +6,7 @@ const getChannels = async () => {
   try {
     const res = await fetch(CHANNEL_API_END_POINT);
     const data = await res.json();
+
     return data;
   } catch (error) {
     console.error(error);

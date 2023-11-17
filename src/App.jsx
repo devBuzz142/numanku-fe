@@ -15,18 +15,23 @@ import MakeInfoPage from './pages/MakeInfoPage/MakeInfoPage';
 import MakeIntroPage from './pages/MakeIntroPage/MakeIntroPage';
 import MakeKukiTypePage from './pages/MakeKukiTypePage/MakeKukiTypePage';
 import MakeCompletePage from './pages/MakeCompletePage/MakeCompletePage';
+import { useChannelContext } from './contexts/ChannelProvider';
 
 function App() {
+  // channel context
+  const { channelState } = useChannelContext();
+
   return (
     <PageTemplate>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/view" element={<ViewMainPage />} />
-        <Route path="/view/login" element={<ViewLoginPage />} />
-        <Route path="/view/kuki/*" element={<ViewKukiPage />} />
-        <Route path="/view/design" element={<ViewDesignPage />} />
-        <Route path="/view/write" element={<ViewWritePage />} />
-        <Route path="/view/complete" element={<ViewCompletePage />} />
+        <Route path="/view" element={<ViewMainPage />}>
+          <Route path="/view/login" element={<ViewLoginPage />} />
+          <Route path="/view/kuki/*" element={<ViewKukiPage />} />
+          <Route path="/view/design" element={<ViewDesignPage />} />
+          <Route path="/view/write" element={<ViewWritePage />} />
+          <Route path="/view/complete" element={<ViewCompletePage />} />
+        </Route>
 
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
