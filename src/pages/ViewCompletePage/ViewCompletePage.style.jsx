@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import COMPLETE_PAGE from '../../assets/images/view-complete-page.png';
 
 export const ViewCompletePage = styled.div`
   width: 100%;
@@ -7,10 +8,12 @@ export const ViewCompletePage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background: url(${COMPLETE_PAGE}) no-repeat center;
 `;
 
 export const HeaderContainer = styled.div`
-  margin-top: 250px;
+  margin-top: 320px;
 
   width: 100%;
   height: 96px;
@@ -22,7 +25,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const KukiContainer = styled.div`
-  margin-top: 220px;
+  margin-top: 240px;
 
   max-width: 600px;
   min-width: 520px;
@@ -31,4 +34,22 @@ export const KukiContainer = styled.div`
 
   display: flex;
   justify-content: center;
+
+  ::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(${(props) => props.outter}) no-repeat center;
+    background-size: contain;
+  }
+
+  ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(${(props) => props.inner}) no-repeat center;
+    background-size: contain;
+  }
 `;

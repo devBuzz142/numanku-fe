@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import * as S from './ViewCompletePage.style';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { TEMP_KUKIES } from '../../commons/dummy';
+import { KUKI_IMAGES } from '../../commons/dummy';
 
 const ViewCompletePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { outter, inner } = location.state;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +22,10 @@ const ViewCompletePage = () => {
   return (
     <S.ViewCompletePage>
       <S.HeaderContainer>쿠키 선물 완료!</S.HeaderContainer>
-      <S.KukiContainer>kuki</S.KukiContainer>
+      <S.KukiContainer
+        outter={KUKI_IMAGES.outter[outter]}
+        inner={KUKI_IMAGES.inner[inner]}
+      ></S.KukiContainer>
     </S.ViewCompletePage>
   );
 };

@@ -61,7 +61,12 @@ const ViewWritePage = () => {
       return;
     }
 
-    navigate('/view');
+    navigate('/view/complete', {
+      state: {
+        outter,
+        inner,
+      },
+    });
   };
 
   return (
