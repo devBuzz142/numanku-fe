@@ -12,9 +12,9 @@ const getUsers = async () => {
   }
 };
 
-const getUserById = async (userId) => {
+const getUserById = async ({ user_id }) => {
   try {
-    const res = await fetch(USER_API_END_POINT + '/' + userId);
+    const res = await fetch(USER_API_END_POINT + '/' + user_id);
     const data = await res.json();
     return data;
   } catch (error) {

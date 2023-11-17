@@ -35,8 +35,34 @@ export const KukiContainer = styled.div`
   max-height: 600px;
   min-height: 520px;
 
-  background-image: ${({ image }) => `url(${image})`};
-  background-size: contain;
+  ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${(props) => props.outter});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  ::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    height: 90%;
+
+    background-image: url(${(props) => props.inner});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const ContentContainer = styled.div`

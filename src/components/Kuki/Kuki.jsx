@@ -9,7 +9,7 @@ const Kuki = ({ kuki }) => {
   return (
     <S.KukiContainer
       left={kuki.x}
-      onClick={() => navigate(`/view/kuki/${kuki.id}`)}
+      onClick={() => navigate(`/view/kuki/${kuki.id}`, { state: kuki })}
     >
       <S.KukiWrapper
         likeCount={kuki.likeCount}

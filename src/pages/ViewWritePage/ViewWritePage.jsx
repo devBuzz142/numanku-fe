@@ -16,6 +16,8 @@ import { KUKI_IMAGES } from '../../commons/dummy';
 const ViewWritePage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { outter, inner } = location.state;
+
   const { channelState } = useChannelContext();
   const { authState } = useAuthContext();
 
@@ -40,8 +42,6 @@ const ViewWritePage = () => {
       alert('방명록 내용을 입력해주세요.');
       return;
     }
-
-    const { outter, inner } = location.state;
 
     const kuki = await API.kuki.createKuki({
       content: kukiContents,
@@ -71,11 +71,14 @@ const ViewWritePage = () => {
           <Icon name="BACK_FILL" width={45} height={45} />
         </S.UndoWrapper>
         <S.NameWrapper>
-          <Header fontSize={48}>{isAnonymous ? '익명' : '이름'}</Header>
+          <Header fontSize={48}>{isAnonymous ? '익명' : authState.name}</Header>
         </S.NameWrapper>
       </S.TopContainer>
       <S.KukiContainer>
-        <S.Kuki outter={KUKI_IMAGES.outter[0]} inner={KUKI_IMAGES.inner[0]} />
+        <S.Kuki
+          outter={KUKI_IMAGES.outter[outter]}
+          inner={KUKI_IMAGES.inner[inner]}
+        />
         <S.LockBadgeWrapper lock={isPrivate}>
           <Icon name="LOCK_FILL" width={100} height={100} />
         </S.LockBadgeWrapper>
