@@ -26,6 +26,15 @@ export const KukiContainer = styled.div`
   rotate: ${({ rotate }) => rotate}deg;
 `;
 
+export const LockBadgeWrapper = styled.div`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+  display: ${(props) => (props.lock ? 'block' : 'none')};
+`;
+
 export const KukiWrapper = styled.div`
   /* width: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px;
   height: ${({ likeCount }) => 90 + Math.min(20, likeCount * 2)}px; */
