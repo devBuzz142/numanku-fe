@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import PageTemplate from './pages/PageTemplate/PageTemplate';
 import HomePage from './pages/HomePage/HomePage';
 
+import ViewIntroPage from './pages/ViewIntroPage/ViewIntroPage';
 import ViewLoginPage from './pages/ViewLoginPage/ViewLoginPage';
 import ViewMainPage from './pages/ViewMainPage/ViewMainPage';
 import ViewKukiPage from './pages/ViewKukiPage/ViewKukiPage';
@@ -36,7 +37,7 @@ function App() {
   return (
     <PageTemplate>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<ViewIntroPage />} />
         <Route path="/view" element={<ViewMainPage />} />
         <Route path="/view/login" element={<ViewLoginPage />} />
         <Route path="/view/kuki/*" element={<ViewKukiPage />} />

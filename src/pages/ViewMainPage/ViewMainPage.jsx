@@ -17,6 +17,7 @@ const ViewMainPage = () => {
   const navigate = useNavigate();
   const [kukies, setKukies] = useState(TEMP_KUKIES);
   const { channelState } = useChannelContext();
+  const { authDispatch } = useAuthContext();
 
   // TODO: isPrivate
   const { authState } = useAuthContext();
@@ -33,8 +34,15 @@ const ViewMainPage = () => {
     fetchKukies();
   }, []);
 
+  const handleLogoutClick = async () => {
+    authDispatch({ type: 'RESET_USER' });
+  };
+
   return (
     <S.ViewMainPage image={TEMP_POSTER}>
+      <S.BackVuttonWrapper onClick={handleLogoutClick}>
+        <Icon name="BACK_FILL" width="60px" height="60px" />
+      </S.BackVuttonWrapper>
       <S.InfoButtonWrapper>
         <S.InfoButton>
           <Icon name="HELP_CIRCLE" width="80px" height="80px" />
