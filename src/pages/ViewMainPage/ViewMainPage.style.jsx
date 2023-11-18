@@ -95,7 +95,5 @@ export const KukiContainer = styled.div`
   height: 100%;
   /* height: calc(100% - 280px); */
 
-  top: 280px;
-
   overflow: scroll;
 `;

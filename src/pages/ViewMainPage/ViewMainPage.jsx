@@ -54,9 +54,36 @@ const ViewMainPage = () => {
         </S.PlusButton>
       </S.PlusButtonWrapper>
       <S.KukiContainer>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         {kukies.map((kuki, index) => (
           <Kuki key={index} kuki={kuki} />
         ))}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </S.KukiContainer>
     </S.ViewMainPage>
   );
