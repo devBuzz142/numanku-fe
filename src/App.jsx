@@ -97,14 +97,13 @@ function App() {
         <Route path="/write" element={<ViewWritePage />} />
         <Route path="/complete" element={<ViewCompletePage />} />
         <Route path="/*" element={<ViewMainPage />} />
-        {/* 
+
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
         <Route path="/make/type" element={<MakeKukiTypePage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
         <Route path="/make/complete" element={<MakeCompletePage />} />
-         */}
       </Routes>
     </PageTemplate>
   );
