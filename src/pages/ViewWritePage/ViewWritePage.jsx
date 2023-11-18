@@ -51,7 +51,7 @@ const ViewWritePage = () => {
       innerImageIndex: inner,
       isPrivate: isPrivate,
       isAnonymous: isAnonymous,
-      x: Math.floor(50 + Math.random() * 500),
+      x: Math.floor(Math.random() * 350),
       likeCount: 0,
     });
 

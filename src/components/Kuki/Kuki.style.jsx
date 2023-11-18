@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const KukiContainer = styled.div`
+  top: ${({ top }) => top}px;
   left: ${({ left }) => left}px;
 
   width: 150px;

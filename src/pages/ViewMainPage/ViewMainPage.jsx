@@ -11,24 +11,27 @@ import { useEffect, useState } from 'react';
 import { useChannelContext } from '../../contexts/ChannelProvider';
 import { useAuthContext } from '../../contexts/AuthProvider';
 
-const TEMP_DEFAULT_CHANNEL = 1;
-
 const ViewMainPage = () => {
   const navigate = useNavigate();
   const [kukies, setKukies] = useState(TEMP_KUKIES);
   const { channelState } = useChannelContext();
   const { authDispatch } = useAuthContext();
 
-  // TODO: isPrivate
-  const { authState } = useAuthContext();
-
   useEffect(() => {
     const fetchKukies = async () => {
       const kukies = await API.kuki.getKukiesByChannelId({
-        channel_id: channelState.channelId || TEMP_DEFAULT_CHANNEL,
+        channel_id: channelState.channelId,
       });
 
-      setKukies(kukies);
+      setKukies(
+        kukies.map((kuki) => ({
+          ...kuki,
+          y:
+            Math.random() > 0.5
+              ? Math.random() * 15 + 10
+              : -10 - Math.random() * 15,
+        })),
+      );
     };
 
     fetchKukies();
@@ -43,11 +46,11 @@ const ViewMainPage = () => {
       <S.BackVuttonWrapper onClick={handleLogoutClick}>
         <Icon name="BACK_FILL" width="60px" height="60px" />
       </S.BackVuttonWrapper>
-      <S.InfoButtonWrapper>
+      {/* <S.InfoButtonWrapper>
         <S.InfoButton>
           <Icon name="HELP_CIRCLE" width="80px" height="80px" />
         </S.InfoButton>
-      </S.InfoButtonWrapper>
+      </S.InfoButtonWrapper> */}
       <S.PlusButtonWrapper>
         <S.PlusButton onClick={() => navigate('/design')}>
           <Icon name="ADD_FILL" width="80px" height="80px" />
@@ -66,8 +69,18 @@ const ViewMainPage = () => {
         <br />
         <br />
         <br />
-        {kukies.map((kuki, index) => (
-          <Kuki key={index} kuki={kuki} />
+        {Array.from(Array(kukies.length / 2), (v, i) => [
+          kukies[i * 2],
+          kukies[i * 2 + 1],
+        ]).map((kukies, i) => (
+          <S.KukiWrapper1 key={i}>
+            <S.KukiWrapper2 key={kukies[0].id}>
+              <Kuki key={kukies[0].id} kuki={kukies[0]} />
+            </S.KukiWrapper2>
+            <S.KukiWrapper2 key={kukies[1].id}>
+              <Kuki key={kukies[1].id} kuki={kukies[1]} />
+            </S.KukiWrapper2>
+          </S.KukiWrapper1>
         ))}
         <br />
         <br />

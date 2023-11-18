@@ -18,6 +18,7 @@ const Kuki = ({ kuki }) => {
 
   return (
     <S.KukiContainer
+      top={kuki.y}
       left={kuki.x}
       rotate={Math.random() * 180 - 90}
       onClick={handleKukiClick}

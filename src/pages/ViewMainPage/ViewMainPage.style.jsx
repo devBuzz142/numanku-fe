@@ -94,6 +94,17 @@ export const KukiContainer = styled.div`
   width: 100%;
   height: 100%;
   /* height: calc(100% - 280px); */
+  padding-left: 25px;
+  padding-right: 25px;
 
   overflow: scroll;
+`;
+
+export const KukiWrapper1 = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+export const KukiWrapper2 = styled.div`
+  width: 350px;
 `;

@@ -24,8 +24,6 @@ const GlobalStyle = () => {
           ::-webkit-scrollbar {
             display: none;
           }
-
-          outline: 1px solid red;
         }
 
         *,

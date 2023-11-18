@@ -16,7 +16,7 @@ export const TEMP_KUKIES = (number = 40) => {
     likeCount: Math.floor(Math.random() * 100),
     outterImage: Math.floor(Math.random() * 3),
     innerImage: Math.floor(Math.random() * 3),
-    left: Math.floor(Math.random() * 600) + 20,
+    x: Math.floor(Math.random() * 600) + 20,
   }));
 };
 
