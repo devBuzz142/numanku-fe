@@ -26,8 +26,6 @@ const ViewKukiPage = () => {
     fetchWriter();
   }, []);
 
-  console.log(kuki);
-
   return (
     <S.ViewKukiPage>
       <S.HeaderContainer>
