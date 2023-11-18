@@ -51,6 +51,10 @@ const ChannelProvider = ({ children }) => {
   // api
   useEffect(() => {
     const fetchChannel = async () => {
+      if (channelState.channelId) {
+        return;
+      }
+
       try {
         const res = await API.channel.getChannels();
         const channel = res[0];
