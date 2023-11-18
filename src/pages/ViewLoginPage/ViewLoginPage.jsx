@@ -6,12 +6,14 @@ import Header from '../../components/Header/Header';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Icon from '../../components/Icon/Icon';
+import Modal from '../../components/Modal/Modal';
 
 import { API } from '../../api/';
 import { useChannelContext } from '../../contexts/ChannelProvider';
 import { useAuthContext } from '../../contexts/AuthProvider';
 
 import LOGO from '../../assets/images/logo2.png';
+import GUIDE from '../../assets/images/guide.svg';
 
 const ViewLoginPage = () => {
   const navigate = useNavigate();
@@ -123,6 +125,8 @@ const ViewLoginPage = () => {
     });
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <S.ViewLoginPageContainer>
       <S.HeaderContainer>
@@ -178,10 +182,21 @@ const ViewLoginPage = () => {
         <br />
         <br />
         <S.GuideWrapper>
-          <S.Guide>도움말</S.Guide>
-          <Icon name="HELP_CIRCLE" width={32} height={32} />
+          <S.GuideClick onClick={() => setIsModalOpen(true)}>
+            <S.Guide>도움말</S.Guide>
+            <Icon name="HELP_CIRCLE" width={32} height={32} />
+          </S.GuideClick>
         </S.GuideWrapper>
       </S.MainContainer>
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <S.GuideContentContinaer>
+            <img src={GUIDE} alt="guide" width={600} />
+            <S.Contact>문의 | devbuzz142@gmail.com</S.Contact>
+            <S.Contact>1.0.0 ver copyright@NUMANKU</S.Contact>
+          </S.GuideContentContinaer>
+        </Modal>
+      )}
     </S.ViewLoginPageContainer>
   );
 };

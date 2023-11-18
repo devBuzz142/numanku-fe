@@ -57,6 +57,11 @@ export const Guide = styled.div`
   text-decoration-line: underline;
 `;
 
+export const GuideClick = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const MainContainer = styled.div`
   margin-top: 60px;
 
@@ -81,4 +86,25 @@ export const ButtonWrapper = styled.div`
 
   display: flex;
   justify-content: center;
+`;
+
+export const GuideContentContinaer = styled.div`
+  margin-top: 80px;
+  width: 600px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+`;
+
+export const Contact = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 100;
+  bottom: 80px;
 `;
