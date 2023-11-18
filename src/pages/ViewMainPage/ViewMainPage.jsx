@@ -27,6 +27,7 @@ const ViewMainPage = () => {
       setKukies(
         kukies.map((kuki) => ({
           ...kuki,
+          x: kuki.x - 60,
           y:
             Math.random() > 0.5
               ? Math.random() * 15 + 10
@@ -72,7 +73,7 @@ const ViewMainPage = () => {
         <br />
         <br />
         <br />
-        {Array.from(Array(Math.floor(kukies.length / 2)), (v, i) => [
+        {Array.from(Array(1 + Math.floor((kukies.length - 1) / 2)), (v, i) => [
           kukies[i * 2],
           kukies[i * 2 + 1],
         ]).map((kukies, i) => (
@@ -80,9 +81,11 @@ const ViewMainPage = () => {
             <S.KukiWrapper2 key={kukies[0].id}>
               <Kuki key={kukies[0].id} kuki={kukies[0]} />
             </S.KukiWrapper2>
-            <S.KukiWrapper2 key={kukies[1].id}>
-              <Kuki key={kukies[1].id} kuki={kukies[1]} />
-            </S.KukiWrapper2>
+            {kukies[1] && (
+              <S.KukiWrapper2 key={kukies[1].id}>
+                <Kuki key={kukies[1].id} kuki={kukies[1]} />
+              </S.KukiWrapper2>
+            )}
           </S.KukiWrapper1>
         ))}
         <br />
