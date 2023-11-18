@@ -89,6 +89,7 @@ export const ContentWrapper = styled.div`
   font-family: 'UhBeeZZIBA-Regular';
   font-size: 28px;
   overflow-wrap: break-word;
+  white-space: pre-wrap;
 `;
 
 export const HeartWrapper = styled.div`
