@@ -51,7 +51,7 @@ function App() {
   }, [authState.userId]);
 
   if (!firstEnter) {
-    console.log('first enter phase');
+    // console.log('first enter phase');
 
     return (
       <PageTemplate>
@@ -63,7 +63,7 @@ function App() {
   }
 
   if (!channelState.channelId) {
-    console.log('channel phase');
+    // console.log('channel phase');
 
     return (
       <PageTemplate>
@@ -75,7 +75,7 @@ function App() {
   }
 
   if (!authState.userId) {
-    console.log('login phase');
+    // console.log('login phase');
 
     return (
       <PageTemplate>
@@ -86,7 +86,7 @@ function App() {
     );
   }
 
-  console.log('main phase');
+  // console.log('main phase');
 
   return (
     <PageTemplate>

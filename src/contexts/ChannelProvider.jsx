@@ -57,35 +57,6 @@ const ChannelProvider = ({ children }) => {
   //       return;
   //     }
 
-  //     try {
-  //       const res = await API.channel.getChannels();
-  //       const channel = res[0];
-
-  //       channelDispatch({
-  //         type: 'SET_CHANNEL',
-  //         payload: {
-  //           ...channel,
-  //           channelId: channel.id,
-  //           outterImages: [
-  //             channel.outterImage0,
-  //             channel.outterImage1,
-  //             channel.outterImage2,
-  //           ],
-  //           innerImages: [
-  //             channel.innerImage0,
-  //             channel.innerImage1,
-  //             channel.innerImage2,
-  //           ],
-  //         },
-  //       });
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchChannel();
-  // }, []);
-
   return (
     <ChannelContext.Provider value={{ channelState, channelDispatch }}>
       {children}
