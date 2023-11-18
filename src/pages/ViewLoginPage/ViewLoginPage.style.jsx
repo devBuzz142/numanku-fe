@@ -89,7 +89,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const GuideContentContinaer = styled.div`
-  margin-top: 80px;
+  margin-top: 20px;
   width: 600px;
 
   display: flex;
@@ -106,5 +106,5 @@ export const Contact = styled.div`
 
   font-size: 16px;
   font-weight: 100;
-  bottom: 80px;
+  bottom: 220px;
 `;
