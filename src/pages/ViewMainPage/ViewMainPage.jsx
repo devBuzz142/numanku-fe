@@ -41,7 +41,7 @@ const ViewMainPage = () => {
   const handleLogoutClick = async () => {
     authDispatch({ type: 'RESET_USER' });
   };
-  console.log(channelState);
+
   return (
     <S.ViewMainPage
       image={channelState.name === 'test0' ? HAMELIN_POSTER : TEMP_POSTER}
@@ -72,7 +72,7 @@ const ViewMainPage = () => {
         <br />
         <br />
         <br />
-        {Array.from(Array(kukies.length / 2), (v, i) => [
+        {Array.from(Array(Math.floor(kukies.length / 2)), (v, i) => [
           kukies[i * 2],
           kukies[i * 2 + 1],
         ]).map((kukies, i) => (
