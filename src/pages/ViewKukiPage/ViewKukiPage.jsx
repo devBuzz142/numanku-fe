@@ -34,7 +34,7 @@ const ViewKukiPage = () => {
         <S.BackIconWrapper onClick={() => navigate('/view')}>
           <Icon name="BACK_FILL" />
         </S.BackIconWrapper>
-        <Header fontSize={48}>{kuki.Anonymous ? '익명' : writer.name}</Header>
+        <Header fontSize={48}>{kuki.isAnonymous ? '익명' : writer.name}</Header>
       </S.HeaderContainer>
       <S.KukiContainer
         outter={KUKI_IMAGES.outter[kuki.outterImageIndex]}
