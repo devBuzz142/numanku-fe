@@ -32,42 +32,55 @@ function App() {
   const [firstEnter, setFirstEnter] = useState(false);
 
   useEffect(() => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+
     const timer = setTimeout(() => {
       setFirstEnter(true);
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [firstEnter]);
+
+  useEffect(() => {
+    if (firstEnter && !authState.userId) {
+      if (location.pathname !== '/login') {
+        navigate('/login');
+      }
+    }
+  }, [authState.userId]);
 
   if (!firstEnter) {
-    console.log('first enter phase', firstEnter);
+    console.log('first enter phase');
+
     return (
       <PageTemplate>
         <Routes>
-          <Route
-            path="/*"
-            element={
-              <ViewIntroPage
-                firstEnter={firstEnter}
-                setFirstEnter={setFirstEnter}
-              />
-            }
-          />
+          <Route path="*" element={<ViewIntroPage />} />
+        </Routes>
+      </PageTemplate>
+    );
+  }
+
+  if (!channelState.channelId) {
+    console.log('channel phase');
+
+    return (
+      <PageTemplate>
+        <Routes>
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </PageTemplate>
     );
   }
 
   if (!authState.userId) {
-    console.log('login phase', location.pathname);
-
-    if (location.pathname !== '/view/login') {
-      navigate('/view/login');
-    }
+    console.log('login phase');
 
     return (
       <PageTemplate>
         <Routes>
-          <Route path="/*" element={<ViewLoginPage />} />
+          <Route path="*" element={<ViewLoginPage />} />
         </Routes>
       </PageTemplate>
     );
@@ -78,22 +91,20 @@ function App() {
   return (
     <PageTemplate>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/channel" element={<HomePage />} />
-
-        <Route path="/view" element={<HomePage />} />
-        <Route path="/view/login" element={<ViewLoginPage />} />
-        <Route path="/view/kuki/*" element={<ViewKukiPage />} />
-        <Route path="/view/design" element={<ViewDesignPage />} />
-        <Route path="/view/write" element={<ViewWritePage />} />
-        <Route path="/view/complete" element={<ViewCompletePage />} />
-
+        <Route path="/view" element={<ViewMainPage />} />
+        <Route path="/kuki/*" element={<ViewKukiPage />} />
+        <Route path="/design" element={<ViewDesignPage />} />
+        <Route path="/write" element={<ViewWritePage />} />
+        <Route path="/complete" element={<ViewCompletePage />} />
+        <Route path="/*" element={<ViewMainPage />} />
+        {/* 
         <Route path="/make" element={<MakeIntroPage />} />
         <Route path="/make/intro" element={<MakeIntroPage />} />
         <Route path="/make/info" element={<MakeInfoPage />} />
-        {/* <Route path="/make/type" element={<MakeKukiTypePage />} /> */}
+        <Route path="/make/type" element={<MakeKukiTypePage />} />
         <Route path="/make/design" element={<MakeDesignPage />} />
         <Route path="/make/complete" element={<MakeCompletePage />} />
+         */}
       </Routes>
     </PageTemplate>
   );

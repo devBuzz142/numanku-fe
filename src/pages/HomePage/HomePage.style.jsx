@@ -9,8 +9,6 @@ export const HomePage = styled.div`
   flex-direction: column;
   align-items: center;
 
-  overflow-y: scroll;
-
   background: url(${LOGIN_PAGE}) no-repeat center;
 `;
 
@@ -26,6 +24,8 @@ export const ChannelList = styled.div`
   margin-top: 80px;
 
   height: 660px;
+
+  overflow-y: scroll;
 `;
 
 export const ChannelWrapper = styled.div`

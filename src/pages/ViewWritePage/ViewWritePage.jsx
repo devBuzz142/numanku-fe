@@ -61,7 +61,7 @@ const ViewWritePage = () => {
       return;
     }
 
-    navigate('/view/complete', {
+    navigate('/complete', {
       state: {
         outter,
         inner,
@@ -72,7 +72,7 @@ const ViewWritePage = () => {
   return (
     <S.ViewWritePageContainer>
       <S.TopContainer>
-        <S.UndoWrapper onClick={() => navigate('/view')}>
+        <S.UndoWrapper onClick={() => navigate('/')}>
           <Icon name="BACK_FILL" width={45} height={45} />
         </S.UndoWrapper>
         <S.NameWrapper>

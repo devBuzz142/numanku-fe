@@ -13,7 +13,7 @@ const Kuki = ({ kuki }) => {
   const handleKukiClick = () => {
     if (kuki.isPrivate && !authState.isMaker) return;
 
-    navigate(`/view/kuki/${kuki.id}`, { state: kuki });
+    navigate(`/kuki/${kuki.id}`, { state: kuki });
   };
 
   return (

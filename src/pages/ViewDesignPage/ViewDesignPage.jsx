@@ -22,7 +22,7 @@ const ViewDesignPage = () => {
   };
 
   const handleSubmitClick = () => {
-    navigate('/view/write', {
+    navigate('/write', {
       state: {
         outter: activeTab.outter,
         inner: activeTab.inner,
@@ -33,7 +33,7 @@ const ViewDesignPage = () => {
   return (
     <S.ViewDesignPage>
       <S.HeaderContainer>
-        <S.IconWrapper onClick={() => navigate('/view')}>
+        <S.IconWrapper onClick={() => navigate('/')}>
           <Icon name="BACK_FILL" width={46} />
         </S.IconWrapper>
         <Header width={346}>{'예쁘게\n꾸며주세요!'}</Header>

@@ -29,7 +29,7 @@ const ViewKukiPage = () => {
   return (
     <S.ViewKukiPage>
       <S.HeaderContainer>
-        <S.BackIconWrapper onClick={() => navigate('/view')}>
+        <S.BackIconWrapper onClick={() => navigate('/')}>
           <Icon name="BACK_FILL" />
         </S.BackIconWrapper>
         <Header fontSize={48}>{kuki.isAnonymous ? '익명' : writer.name}</Header>

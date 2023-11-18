@@ -12,7 +12,7 @@ const ViewCompletePage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/view');
+      navigate('/');
     }, 3000);
     return () => {
       clearTimeout(timer);

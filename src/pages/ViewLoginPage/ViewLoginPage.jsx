@@ -85,7 +85,7 @@ const ViewLoginPage = () => {
           },
         });
 
-        navigate('/view');
+        navigate('/');
 
         return;
       } else {
@@ -114,7 +114,7 @@ const ViewLoginPage = () => {
       },
     });
 
-    navigate('/view');
+    navigate('/');
   };
 
   return (

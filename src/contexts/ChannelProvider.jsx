@@ -49,40 +49,40 @@ const ChannelProvider = ({ children }) => {
   //   }, [state]);
 
   // api
-  useEffect(() => {
-    const fetchChannel = async () => {
-      if (channelState.channelId) {
-        return;
-      }
+  // useEffect(() => {
+  //   const fetchChannel = async () => {
+  //     if (channelState.channelId) {
+  //       return;
+  //     }
 
-      try {
-        const res = await API.channel.getChannels();
-        const channel = res[0];
+  //     try {
+  //       const res = await API.channel.getChannels();
+  //       const channel = res[0];
 
-        channelDispatch({
-          type: 'SET_CHANNEL',
-          payload: {
-            ...channel,
-            channelId: channel.id,
-            outterImages: [
-              channel.outterImage0,
-              channel.outterImage1,
-              channel.outterImage2,
-            ],
-            innerImages: [
-              channel.innerImage0,
-              channel.innerImage1,
-              channel.innerImage2,
-            ],
-          },
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  //       channelDispatch({
+  //         type: 'SET_CHANNEL',
+  //         payload: {
+  //           ...channel,
+  //           channelId: channel.id,
+  //           outterImages: [
+  //             channel.outterImage0,
+  //             channel.outterImage1,
+  //             channel.outterImage2,
+  //           ],
+  //           innerImages: [
+  //             channel.innerImage0,
+  //             channel.innerImage1,
+  //             channel.innerImage2,
+  //           ],
+  //         },
+  //       });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    fetchChannel();
-  }, []);
+  //   fetchChannel();
+  // }, []);
 
   return (
     <ChannelContext.Provider value={{ channelState, channelDispatch }}>
