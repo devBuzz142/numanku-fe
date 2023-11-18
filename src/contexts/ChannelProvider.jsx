@@ -22,6 +22,8 @@ const channelReducer = (state, action) => {
         ...state,
         ...action.payload,
       };
+    case 'RESET_CHANNEL':
+      return initialChannelState;
     default:
       throw new Error(`Unknown action type: ${action.type}`);
   }

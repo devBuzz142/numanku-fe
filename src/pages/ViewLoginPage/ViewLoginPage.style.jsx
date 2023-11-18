@@ -20,6 +20,22 @@ export const HeaderContainer = styled.div`
   align-items: center;
 `;
 
+export const BackIconWrapper = styled.div`
+  position: absolute;
+  left: -120px;
+
+  ::before {
+    content: '';
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+`;
+
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -15,7 +15,7 @@ import LOGO from '../../assets/images/logo2.png';
 
 const ViewLoginPage = () => {
   const navigate = useNavigate();
-  const { channelState } = useChannelContext();
+  const { channelState, channelDispatch } = useChannelContext();
   const { authDispatch } = useAuthContext();
 
   const [login, setLogin] = useState({
@@ -117,9 +117,18 @@ const ViewLoginPage = () => {
     navigate('/');
   };
 
+  const handleBackClick = () => {
+    channelDispatch({
+      type: 'RESET_CHANNEL',
+    });
+  };
+
   return (
     <S.ViewLoginPageContainer>
       <S.HeaderContainer>
+        <S.BackIconWrapper onClick={handleBackClick}>
+          <Icon name="BACK_FILL" width={40} height={40} />
+        </S.BackIconWrapper>
         <img src={LOGO} alt="logo" width={330} />
         <S.HeaderWrapper>
           <Header>로그인</Header>
