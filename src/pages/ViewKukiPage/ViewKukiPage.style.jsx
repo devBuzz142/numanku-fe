@@ -76,9 +76,7 @@ export const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 24px;
 
   @font-face {
     font-family: 'UhBeeZZIBA-Regular';
@@ -90,6 +88,7 @@ export const ContentWrapper = styled.div`
 
   font-family: 'UhBeeZZIBA-Regular';
   font-size: 28px;
+  overflow-wrap: break-word;
 `;
 
 export const HeartWrapper = styled.div`

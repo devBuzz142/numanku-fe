@@ -93,7 +93,7 @@ const ViewWritePage = () => {
           <SpeechBubble>
             <S.TextareaWrapper>
               <Input
-                width={580}
+                width={540}
                 height={560}
                 label="방명록내용"
                 type="textarea"

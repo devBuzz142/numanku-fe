@@ -65,7 +65,16 @@ export const Textarea = styled.textarea`
   width: ${(props) => props.width + 'px' || '100%'};
   height: ${(props) => props.height + 'px' || '100%'};
 
-  font-size: 30px;
+  @font-face {
+    font-family: 'UhBeeZZIBA-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/UhBeeZZIBA-Regular.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  font-family: 'UhBeeZZIBA-Regular';
+  font-size: 28px;
 
   white-space: pre-wrap;
   word-wrap: break-word;
