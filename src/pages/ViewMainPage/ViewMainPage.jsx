@@ -2,6 +2,7 @@ import * as S from './ViewMainPage.style';
 import Icon from '../../components/Icon/Icon';
 import Kuki from '../../components/Kuki/Kuki';
 
+import HAMELIN_POSTER from '../../assets/images/hamelin_poster.jpeg';
 import TEMP_POSTER from '../../assets/images/temp_poster2.jpeg';
 import { TEMP_KUKIES } from '../../commons/dummy';
 import { API } from '../../api';
@@ -40,9 +41,11 @@ const ViewMainPage = () => {
   const handleLogoutClick = async () => {
     authDispatch({ type: 'RESET_USER' });
   };
-
+  console.log(channelState);
   return (
-    <S.ViewMainPage image={TEMP_POSTER}>
+    <S.ViewMainPage
+      image={channelState.name === 'test0' ? HAMELIN_POSTER : TEMP_POSTER}
+    >
       <S.BackVuttonWrapper onClick={handleLogoutClick}>
         <Icon name="BACK_FILL" width="60px" height="60px" />
       </S.BackVuttonWrapper>
