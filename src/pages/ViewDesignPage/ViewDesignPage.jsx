@@ -36,7 +36,7 @@ const ViewDesignPage = () => {
         <S.IconWrapper onClick={() => navigate('/')}>
           <Icon name="BACK_FILL" width={46} />
         </S.IconWrapper>
-        <Header width={346}>{'예쁘게\n꾸며주세요!'}</Header>
+        <Header width={346}>{'꾸며주세오'}</Header>
       </S.HeaderContainer>
       <S.KukiContainer>
         <S.KukiWrapper>

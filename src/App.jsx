@@ -68,7 +68,7 @@ function App() {
     return (
       <PageTemplate>
         <Routes>
-          <Route path="*" element={<MakeDesignPage />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </PageTemplate>
     );
