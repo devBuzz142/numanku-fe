@@ -180,7 +180,7 @@ const MakeDesignPage = () => {
 
     for (let i = 0; i < 3; i++) {
       const link = document.createElement('a');
-      link.download = `kuki_outter_${i}.png`;
+      link.download = `kuki_inner_${i}.png`;
       link.href = drawingImg.inner[i];
       link.click();
     }
